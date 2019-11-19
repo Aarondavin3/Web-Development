@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Nov-2019, 10:03:40
+    Author     : adavi
+*/
+
+body{
+	background-image:url("../img/Header.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items:center;
+}
+
+h1{
+	text-align: center;
+	font-family: 'Lucida Console';
+	font-size: 35px;
+	top:0.5em;
+	position:relative;
+        
+    
+}
+
+.i:hover{
+    cursor:pointer;
+}
+
+h2{
+	
+	text-align: center;
+	font-family: 'Lucida Console';
+	font-size: 30px;
+}
+
+p{
+	
+	text-align: center;
+	font-family: 'Lucida Console';
+	font-size: 12px;
+}
+
+.container-fluid {
+	width: 400px;
+	height: 430px;
+	border-color:#70B5C3;
+	border-style:inset;
+	border-radius: 25px;
+	position: absolute;
+	top:75;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	
+}
+
+.form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+}
+.form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+}
+.form-signin .form-control:focus {
+        z-index: 2;
+}
+.form-signin input[type="email"] {
+        border-radius: 15px;
+}
+.form-signin input[type="password"] {
+        border-radius: 15px;
+}
+
+.btn-primary{
+	width:120px;
+	background-color:black;
+	padding:8px 8px;
+	font-family: "Courier New";
+}
+
+.btn-primary:hover{
+	background-color:#70B5C3;
+}
