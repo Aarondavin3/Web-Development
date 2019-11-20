@@ -14,3 +14,8 @@ function googleClick(){
 	window.open("https://www.google.ie/");
 }
 
+function h1Click(){
+        document.getElementById("title");
+        window.open("KiteWebApplication/Homepage.jsp");
+}
+

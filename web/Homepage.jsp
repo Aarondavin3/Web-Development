@@ -34,9 +34,9 @@
                </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
-                          <li><a href="/KiteWebApplication/ProductBrowse.jsp">OUR ROOTS</a></li>
-                          <li><a href="Products.html">OUR KITES</a></li>
-                          <li><a href="#">SHOP</a></li>
+                          <li><a href="#">OUR ROOTS</a></li>
+                          <li><a href="/KiteWebApplication/ProductBrowse.jsp">OUR KITES</a></li>
+                          <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
                           <li><a href="#">FOLLOW</a></li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
@@ -116,7 +116,7 @@
 	   <br>
 	    <div class="card-body">SHOP NOW<br> & GET 10% OFF
 		<br>
-		<a href="Products.html" class="btn btn-primary btn-lg">SHOP</a>
+		<a href="/KiteWebApplication/ProductBrowse.jsp" class="btn btn-primary btn-lg">SHOP</a>
 		</div>
 	   </div>
 	  </div>

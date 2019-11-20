@@ -8,14 +8,7 @@ and open the template in the editor.
     Author     : adavi
 */
 
-body{
-	background-image:url("../img/Header.jpg");
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	align-items:center;
-}
+
 
 h1{
 	text-align: center;
@@ -87,9 +80,18 @@ p{
 	width:120px;
 	background-color:black;
 	padding:8px 8px;
-	font-family: "Courier New";
+	font-family: 'Lucida Console';
 }
 
 .btn-primary:hover{
 	background-color:#70B5C3;
+}
+
+a{
+    color:black;
+    font-family: 'Lucida Console';
+}
+
+a:hover{
+    color:#70B5C3;
 }

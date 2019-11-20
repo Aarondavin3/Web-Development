@@ -15,12 +15,13 @@
 		
 		<!--External Stylesheet-->
 		<link rel="stylesheet" type="text/css" href="css/ProductBrowse.css"/>
+                <script type = "text/javascript" src ="js/iconClick.js"></script>
 		
 	</head>
 	<body>
 	<div class="header">
-		  <h1>KITES BOUTIQUE</h1>
-		 </div>
+            <h1>KITES BOUTIQUE</h1>
+        </div>
 		
 		 <nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
@@ -33,9 +34,9 @@
 		   </div>
 	    	<div class="collapse navbar-collapse" id="myNavbar">
 			 <ul class="nav navbar-nav">
-    			 <li><a href="Bootstrap.html">OUR ROOTS</a></li>
-				 <li><a href="Products.html">OUR KITES</a></li>
-				 <li><a href="Products.html">SHOP</a></li>
+    			 <li><a href="KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
+				 <li><a href="#">OUR KITES</a></li>
+				 <li><a href="#">SHOP</a></li>
 				 <li><a href="#">FOLLOW</a></li>
 			 </ul>
 			 <ul class="nav navbar-nav navbar-right">
@@ -104,7 +105,7 @@
 		   
 		   <div class="panel-footer panel-custom">
 				<p>&euro;14.99</p>
-				<a href=" View Product.html" class="btn btn-primary btn-lg">BUY NOW</a>
+				<a href="KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
 		   </div>  
 		</div>
 	</div>
@@ -122,7 +123,7 @@
 		</ul>
 	   </div>
 	    <div class="panel-footer panel-custom">
-			<p> ?9.99</p>
+			<p> &euro;9.99</p>
 			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
 		</div>
 	</div>
@@ -141,7 +142,7 @@
 		</ul>
 	   </div>
 	    <div class="panel-footer panel-custom">
-			<p> ?22.99</p>
+			<p> &euro;22.99</p>
 			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
 		</div>
 	</div>
@@ -166,7 +167,7 @@
 		  </div>
 		   
 		   <div class="panel-footer panel-custom">
-				<p> ?14.99</p>
+				<p> &euro;18.99</p>
 				<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
 		   </div>  
 		</div>
@@ -185,7 +186,7 @@
 		</ul>
 	   </div>
 	    <div class="panel-footer panel-custom">
-			<p> ?9.99</p>
+			<p> &euro;11.99</p>
 			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
 		</div>
 	</div>
@@ -204,7 +205,7 @@
 		</ul>
 	   </div>
 	    <div class="panel-footer panel-custom">
-			<p> ?22.99</p>
+			<p> &euro;27.99</p>
 			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
 		</div>
 	</div>
