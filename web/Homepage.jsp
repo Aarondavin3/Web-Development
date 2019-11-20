@@ -34,20 +34,25 @@
                </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
-                          <li><a href="#">OUR ROOTS</a></li>
+                          <li><a href="/KiteWebApplication/ProductBrowse.jsp">OUR ROOTS</a></li>
                           <li><a href="Products.html">OUR KITES</a></li>
                           <li><a href="#">SHOP</a></li>
                           <li><a href="#">FOLLOW</a></li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
-                          <li><% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
-                              <a href="#">User: <%= user.getFirstName() %></a>
-                          </li>
+                          <li><a href="#" data-toggle="popover" title="WELCOME BACK"  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
+                              User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
+                              <span class="glyphicon glyphicon-user"></span></a></li> 
                           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                       </ul>
                   </div>
               </div>
             </nav>
+                              <script>
+			$(document).ready(function(){
+				$('[data-toggle="popover"]').popover();
+		    });
+			</script>
             <div class="carousel-inner">
                 <img src="img/Header.jpg">
             </div>	
