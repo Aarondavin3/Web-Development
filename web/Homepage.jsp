@@ -37,7 +37,13 @@
                           <li><a href="#">OUR ROOTS</a></li>
                           <li><a href="/KiteWebApplication/ProductBrowse.jsp">OUR KITES</a></li>
                           <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
-                          <li><a href="#">FOLLOW</a></li>
+                          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
+                                  <li><a href="#">FACEBOOK</a></li>
+                                  <li><a href="#">PINTEREST</a></li>                                  
+                              </ul>
+                          </li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li><a href="#" data-toggle="popover" title="WELCOME BACK"  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
@@ -48,11 +54,11 @@
                   </div>
               </div>
             </nav>
-                              <script>
-			$(document).ready(function(){
-				$('[data-toggle="popover"]').popover();
-		    });
-			</script>
+            <script>
+                $(document).ready(function(){
+                    $('[data-toggle="popover"]').popover();
+		});
+            </script>
             <div class="carousel-inner">
                 <img src="img/Header.jpg">
             </div>	

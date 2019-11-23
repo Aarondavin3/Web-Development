@@ -53,6 +53,18 @@ h4{
 .navbar-inverse li:hover{
 	background-color:#70B5C3;
 }
+.dropdown-menu li a{
+    font-family: 'Lucida Console';
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;   
+}
+
+  .dropdown-menu li a:hover{
+    background-color:#70B5C3;
+    display:block;
+}
 
 
 .ul li  a{

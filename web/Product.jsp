@@ -3,7 +3,7 @@
     Created on : 20-Nov-2019, 20:56:29
     Author     : adavi
 --%>
-
+<%@page import="com.kiteapp.model.kiteUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
 	<head>
@@ -41,19 +41,31 @@
 		   </div>
 	    	<div class="collapse navbar-collapse" id="myNavbar">
 			 <ul class="nav navbar-nav">
-    			 <li><a href="#">OUR ROOTS</a></li>
+    			 <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
 				 <li><a href="#">OUR KITES</a></li>
 				 <li><a href="#">SHOP</a></li>
-				 <li><a href="#">FOLLOW</a></li>
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
+                                  <li><a href="#">FACEBOOK</a></li>
+                                  <li><a href="#">PINTEREST</a></li>                                  
+                              </ul>
+                          </li>
 			 </ul>
 			 <ul class="nav navbar-nav navbar-right">
-    			 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+    			<li><a href="#" data-toggle="popover" title="WELCOME BACK"  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
+                              User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
+                                     <span class="glyphicon glyphicon-user"></span></a></li>
 				 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 			 </ul>
 			</div>
 		  </div>
 	     </nav>
-		 
+             <script>
+		$(document).ready(function(){
+                    $('[data-toggle="popover"]').popover();
+		});
+            </script>                       
 	<div class="container-fluid">
 	  <div class="row">
 		 <div class="col-sm-7">

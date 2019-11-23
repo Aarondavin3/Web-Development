@@ -53,6 +53,13 @@ p{
 	
 }
 
+.nav {
+   border-color:#70B5C3;
+}
+
+.nav li{
+    background-color: #70B5C3;
+}
 .form-signin {
         width: 100%;
         max-width: 330px;

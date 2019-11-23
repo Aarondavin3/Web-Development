@@ -19,3 +19,31 @@ function h1Click(){
         window.open("KiteWebApplication/Homepage.jsp");
 }
 
+function validateDetails(){
+    var email;
+    var password;
+    
+    email = document.myForm.email.value;
+    password = document.myForm.password.value;
+    
+    if(email ==="" && password==="" ){
+        alert("Please enter email and password");
+        return false;
+    }else if(password ===""){
+        alert("Please enter your password");
+        return false;
+    }else if(email ===""){
+        alert("Please enter your email");
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function passwordCheck(input){
+        if(input.value !== document.getElementById("newPassword").value){
+            input.setCustomValidity('Password must be matching!');
+        }else{
+            input.setCustomValidity('');
+        }
+}

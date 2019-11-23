@@ -12,6 +12,7 @@ package com.kiteapp.model;
 public class Kite {
     private String name;
     private int kiteID;
+    private String description;
     private String colour;
     private String shape;
     private String material;
@@ -108,6 +109,20 @@ public class Kite {
     
     public void setColour(String colour){
         this.colour = colour;
+    }
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
     
 }
