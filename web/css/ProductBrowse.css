@@ -164,3 +164,16 @@ footer{
 	width:120px;
 	
 }
+
+.map-container{
+overflow:hidden;
+position:relative;
+height:60px;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:85%;
+width:100%;
+position:absolute;
+}

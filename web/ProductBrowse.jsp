@@ -42,15 +42,22 @@
                               <ul class="dropdown-menu">
                                   <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
                                   <li><a href="#">FACEBOOK</a></li>
-                                  <li><a href="#">PINTEREST</a></li>                                  
+                                  <li><a href="https://www.pinterest.ie/kduplechain/kites/">PINTEREST</a></li>                                  
                               </ul>
                           </li>
 			 </ul>
 			 <ul class="nav navbar-nav navbar-right">
-                             <li><a href="#" data-toggle="popover" title="WELCOME BACK"  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
-                              User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
-                                     <span class="glyphicon glyphicon-user"></span></a></li>
-				 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            <li><a href="#" data-toggle="popover" title="WELCOME BACK"  
+                                   data-content=<%if(session.getAttribute("SKUSER") != null){
+                                       kiteUser user = (kiteUser)session.getAttribute("SKUSER");
+                                       
+                                    %>
+                                   User:<%= user.getFirstName() %> <%}else{%>
+                                   Guest:
+                                   <%}%>
+                                  data-placement="bottom" data-trigger="hover">
+                              <span class="glyphicon glyphicon-user"></span></a></li> 
+                              <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 			 </ul>
 			</div>
 		  </div>
@@ -75,15 +82,15 @@
 				 <div class="carousel-caption">
 					<h2>OUR PRODUCTS</h2>
 				 </div>
-				  <img src="img/kites1.jpg" alt="Los Angeles">
+				  <img src="img/kites1.jpg" alt="Kite">
 				</div>
 
 				<div class="item">
-				  <img src="img/pexels.jpeg" alt="Chicago">
+				  <img src="img/pexels.jpeg" alt="Kite">
 				</div>
 
 				<div class="item">
-				  <img src="img/Diamond-1.jpg" alt="New York">
+				  <img src="img/Diamond-1.jpg" alt="Kite">
 			  </div>
 
 			  <!-- Left and right controls -->
@@ -118,7 +125,14 @@
 		   
 		   <div class="panel-footer panel-custom">
 				<p>&euro;14.99</p>
-				<a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                <%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                    <%}else{%>
+                                   
+                                    <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
+                                     <%}%>
 		   </div>  
 		</div>
 	</div>
@@ -237,7 +251,11 @@
 		   <i class="fa fa-instagram"></i>
 	   </ul>
    
-   
+           <!--Google map-->
+	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">
+	  <iframe src="https://maps.google.com/maps?q=midelton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+		style="border:0" allowfullscreen></iframe>
+	</div>
 	</footer>
 		
 		

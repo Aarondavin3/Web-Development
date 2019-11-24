@@ -46,7 +46,8 @@
                           </li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#" data-toggle="popover" title="WELCOME BACK"  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
+                          <li><a href="#" data-toggle="popover" title="WELCOME BACK"  
+                                 data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
                               <span class="glyphicon glyphicon-user"></span></a></li> 
                           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
@@ -69,7 +70,7 @@
               <div class="panel panel-primary">
 	       <div class="panel-heading">DELTA</div>
                 <div class="panel-body"><img src="img/Delta-1.jpg" class="img-responsive" style="width:100%" alt="Delta Kite"></div>
-		 <div class="panel-footer panel-custom"><a href="#">SHOP COLLECTION</a></div>
+		 <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
 	      </div>
 	</div>
 	
@@ -77,7 +78,7 @@
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">PARAFOIL</div>
 	   <div class="panel-body"><img src="img/Parafoil-11.jpg" class="img-responsive" style="width:100%" alt="Parafoil 	Kite"></div>
-	    <div class="panel-footer panel-custom"><a href="#">SHOP COLLECTION</a></div>
+	    <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
 	</div>
 	</div>
 	
@@ -85,7 +86,7 @@
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">DIAMOND</div>
 	   <div class="panel-body"><img src="img/Diamond.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite"></div>
-	    <div class="panel-footer panel-custom"><a href="#">SHOP COLLECTION</a></div>
+	    <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
 	</div>
 	</div>
 	</div>

@@ -84,6 +84,8 @@ public class loginServlet extends HttpServlet implements IConstants {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+      
     }
     
     /**

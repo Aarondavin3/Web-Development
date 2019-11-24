@@ -124,7 +124,11 @@
 		   <i class="fa fa-instagram"></i>
 	   </ul>
    
-   
+          <!--Google map-->
+	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">
+	  <iframe src="https://maps.google.com/maps?q=midelton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+		style="border:0" allowfullscreen></iframe>
+	</div>
 	</footer>
 	
 	</body>
