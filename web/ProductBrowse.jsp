@@ -35,19 +35,23 @@
 		   </div>
 	    	<div class="collapse navbar-collapse" id="myNavbar">
 			 <ul class="nav navbar-nav">
-    			 <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
-				 <li><a href="/KiteWebApplication/ProductBrowse.jsp">OUR KITES</a></li>
+                             <%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                 <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
+                                 <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
 				 <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
 				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">
-                                  <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
-                                  <li><a href="#">FACEBOOK</a></li>
-                                  <li><a href="https://www.pinterest.ie/kduplechain/kites/">PINTEREST</a></li>                                  
+                                 <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
+                                 <li><a href="#">FACEBOOK</a></li>
+                                 <li><a href="https://www.pinterest.ie/kduplechain/kites/">PINTEREST</a></li>                                  
                               </ul>
                           </li>
-			 </ul>
+                           </ul>
+                        
 			 <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#" data-toggle="popover" title="WELCOME BACK"  
+                            <li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
                                    data-content=<%if(session.getAttribute("SKUSER") != null){
                                        kiteUser user = (kiteUser)session.getAttribute("SKUSER");
                                        
@@ -62,6 +66,36 @@
 			</div>
 		  </div>
 	     </nav>
+                            <%}else{%>
+                                 <li><a href="/KiteWebApplication/index.html">OUR ROOTS</a></li>
+              			 <li><a href="/KiteWebApplication/index.html">OUR KITES</a></li>
+				 <li><a href="/KiteWebApplication/index.html">SHOP</a></li>
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
+                                  <li><a href="#">FACEBOOK</a></li>
+                                  <li><a href="https://www.pinterest.ie/kduplechain/kites/">PINTEREST</a></li>                                  
+                              </ul>
+                          </li>
+			 </ul>
+                        
+			 <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
+                                   data-content=<%if(session.getAttribute("SKUSER") != null){
+                                       kiteUser user = (kiteUser)session.getAttribute("SKUSER");
+                                       
+                                    %>
+                                   User:<%= user.getFirstName() %> <%}else{%>
+                                   Guest:
+                                   <%}%>
+                                  data-placement="bottom" data-trigger="hover">
+                              <span class="glyphicon glyphicon-user"></span></a></li> 
+                              <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+			 </ul>
+			</div>
+		  </div>
+	     </nav>
+                                   <%}%>
              <script>
 		$(document).ready(function(){
                     $('[data-toggle="popover"]').popover();
@@ -151,7 +185,14 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;9.99</p>
-			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
+			<%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                    <%}else{%>
+                                   
+                                    <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
+                                     <%}%>
 		</div>
 	</div>
 	</div>
@@ -170,7 +211,14 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;22.99</p>
-			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
+			<%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                    <%}else{%>
+                                   
+                                    <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
+                                     <%}%>
 		</div>
 	</div>
 	</div>
@@ -195,7 +243,14 @@
 		   
 		   <div class="panel-footer panel-custom">
 				<p> &euro;18.99</p>
-				<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
+				<%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                    <%}else{%>
+                                   
+                                    <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
+                                     <%}%>
 		   </div>  
 		</div>
 	</div>
@@ -214,7 +269,14 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;11.99</p>
-			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
+			<%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                    <%}else{%>
+                                   
+                                    <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
+                                     <%}%>
 		</div>
 	</div>
 	</div>
@@ -233,7 +295,14 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;27.99</p>
-			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
+			<%if(session.getAttribute("SKUSER") != null){
+                                        
+                                    %>
+                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
+                                    <%}else{%>
+                                   
+                                    <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
+                                     <%}%>
 		</div>
 	</div>
 	</div>
@@ -243,13 +312,12 @@
 	<footer class="container-fluid text-center">
 	
 	  <h4> KITES BOUTIQUE</h4>
-	   
 	   <ul class="list-unstyled list-inline text-center">
-		   <i class="fa fa-envelope"></i>
-		   <i class="fa fa-facebook-square"></i>
-		   <i class="fa fa-pinterest"></i>
-		   <i class="fa fa-instagram"></i>
-	   </ul>
+		   <i class="fa fa-envelope" id="emailIcon" onclick="emailClick()"></i>
+		   <i class="fa fa-facebook-square" id="facebook" onclick="iconClick()"></i>
+		   <i class="fa fa-pinterest" id="pinterest" onclick="pinterestClick()"></i>
+		   <i class="fa fa-instagram" id="insta" onclick="instaClick()"></i>
+           </ul>
    
            <!--Google map-->
 	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">

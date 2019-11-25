@@ -4,6 +4,13 @@ h1{
 	font-size: 35px;
 }
 
+h2{
+	position:relative;
+	left:0.5em;
+	font-family: 'Lucida Console';
+	font-size: 30px;
+}
+
 h3{
 	
 	text-align: center;
@@ -34,6 +41,15 @@ h4{
 .carousel-inner img{
 	margin:auto;
 	min-height:200px;
+	width:98%;	
+	left:1em;
+	position:relative;
+	
+}
+
+.carousel-inner1 img{
+	margin:auto;
+	height:380px;
 	width:98%;	
 	left:1em;
 	position:relative;
@@ -71,7 +87,9 @@ h4{
     font-family: 'Lucida Console';
 }
 
-
+.list-unstyled:hover{
+    cursor: pointer;
+}
 
 .row{
 	position:relative;

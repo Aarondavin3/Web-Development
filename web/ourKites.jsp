@@ -1,4 +1,6 @@
+
 <%@page import="com.kiteapp.model.kiteUser"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
 	<head>
 	    <title>Kites Boutique </title>
@@ -21,10 +23,10 @@
 		
 	</head>
 	<body>
-            <div class="header">
-             <h1>KITES BOUTIQUE</h1>
-	    </div>			 
-            <nav class="navbar navbar-inverse">
+		<div class="header">
+		  <h1>KITES BOUTIQUE</h1>
+		 </div>
+		 <nav class="navbar navbar-inverse">
               <div class="container-fluid">
 	       <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,7 +37,7 @@
                </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
-                          <li><a href="#">OUR ROOTS</a></li>
+                          <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
                           <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
                           <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
                           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
@@ -61,81 +63,39 @@
                     $('[data-toggle="popover"]').popover();
 		});
             </script>
-            <div class="carousel-inner">
-                <img src="img/Header.jpg">
-            </div>	
-		
-	<div class="container-fluid">
-            <div class = "row">
-             <div class="col-sm-4">
-              <div class="panel panel-primary">
-	       <div class="panel-heading">DELTA</div>
-                <div class="panel-body"><img src="img/Delta-1.jpg" class="img-responsive" style="width:100%" alt="Delta Kite"></div>
-		 <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
-	      </div>
+			
+			<div class="carousel-inner1">
+				<img src="img/Login.jpg" alt="kite on beach">
+			</div>	
+			<br>
+                        
+			
+			<div class="container text-left-center">
+				<h2>OUR KITES</h2>
+
+			
+		     <div class=col-sm-8>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque sit amet porttitor eget dolor. Nec ullamcorper sit amet risus nullam. Id porta nibh venenatis cras sed felis. Ac tortor vitae purus faucibus ornare suspendisse sed. Semper viverra nam libero justo laoreet sit amet. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Cursus euismod quis viverra nibh cras.
+							<br><br>		Adipiscing enim eu turpis egestas. Ut tortor pretium viverra suspendisse potenti nullam ac. In dictum non consectetur a.
+					Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Vel quam elementum pulvinar etiam non quam.
+					 In est ante in nibh mauris. Sed augue lacus viverra vitae congue eu consequat ac felis. Nunc sed blandit libero volutpat sed.
+					 Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis.
+						<br><br>Vitae nunc sed velit dignissim sodales.
+					 Turpis egestas sed tempus urna. Vitae turpis massa sed elementum. Lectus quam id leo in vitae turpis massa sed elementum.
+					 Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Pellentesque id nibh tortor id aliquet lectus. 
+					 Magnis dis parturient montes nascetur. Interdum velit laoreet id donec ultrices.
+ Dignissim suspendisse in est ante in. Quam vulputate dignissim suspendisse in est ante in nibh.
+	</p>
+	<br>
+	<a href="/KiteWebApplication/ProductBrowse.jsp" class="btn btn-primary btn-lg">VISIT OUR SHOP</a>
 	</div>
-	
-	<div class ="col-sm-4">
-	 <div class="panel panel-primary">
-	  <div class="panel-heading">PARAFOIL</div>
-	   <div class="panel-body"><img src="img/Parafoil-11.jpg" class="img-responsive" style="width:100%" alt="Parafoil 	Kite"></div>
-	    <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
-	</div>
-	</div>
-	
-	<div class="col-sm-4">
-	 <div class="panel panel-primary">
-	  <div class="panel-heading">DIAMOND</div>
-	   <div class="panel-body"><img src="img/Diamond.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite"></div>
-	    <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
-	</div>
-	</div>
-	</div>
-	</div>
-	
-	<div class="container text-left">
-	  <h1>OUR ROOTS</h1>
-	</div>
-	  <div class="container-fluid">
-	   <div class="row">
-	    <div class="col-sm-6">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			<br><br>
-			Aliquet porttitor lacus luctus accumsan tortor posuere ac. Sagittis nisl rhoncus mattis rhoncus urna neque. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ut enim blandit volutpat maecenas volutpat blandit. Cras sed felis eget velit aliquet. Aenean vel elit scelerisque mauris pellentesque.
-			Imperdiet massa tincidunt nunc pulvinar. Tristique risus nec feugiat in fermentum posuere urna nec. Imperdiet dui accumsan sit amet nulla. Congue quisque egestas diam in. At volutpat diam ut venenatis tellus in metus vulputate eu. Quisque egestas diam in arcu cursus euismod.
-			Eget mauris pharetra et ultrices neque. Nisl purus in mollis nunc sed id semper risus. Duis at tellus at urna condimentum.
-		 </p>
-	   </div>
-	   <div class="col-sm-6">
-	    <img src ="img/kite.jpg" class="img-responsive" style="width:100%" alt="Kite">
-	   </div>	
-	  </div> 
-	</div>
-	
-	<div class="container-fluid">
-	 <div class="row">
-	  <div class="col-sm-6">
-		<img src="img/kite1.jpg" class="img-responsive" style="width:100%" alt="Kite">
-	  </div>
-	  <div class="col-sm-6">
-	   <div class="card">
-	   <br>
-	    <div class="card-body">SHOP NOW<br> & GET 10% OFF
-		<br>
-		<a href="/KiteWebApplication/ProductBrowse.jsp" class="btn btn-primary btn-lg">SHOP</a>
-		</div>
-	   </div>
-	  </div>
-	 </div>
 	</div>
 	<br><br>
 	<footer class="container-fluid text-center">
 	
 	  <h4> KITES BOUTIQUE</h4>
 	   
-	   <ul class="list-unstyled list-inline text-center">
+	    <ul class="list-unstyled list-inline text-center">
 		   <i class="fa fa-envelope" id="emailIcon" onclick="emailClick()"></i>
 		   <i class="fa fa-facebook-square" id="facebook" onclick="iconClick()"></i>
 		   <i class="fa fa-pinterest" id="pinterest" onclick="pinterestClick()"></i>
@@ -147,6 +107,5 @@
 		style="border:0" allowfullscreen></iframe>
 	</div>
 	</footer>
-	
-    </body>
-	</html>
+	</body>
+</html>	

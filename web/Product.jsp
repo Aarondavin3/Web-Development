@@ -23,13 +23,14 @@
 		<!--External Stylesheet-->
 		<link rel="stylesheet" type="text/css" href="css/ProductBrowse.css"/>
 		<script type = "text/javascript" src ="js/Increment.js"></script>
+                <script type = "text/javascript" src ="js/iconClick.js"></script>
 		
 	</head>
 	<body>
 	<div class="header">
 		  <h1>KITES BOUTIQUE</h1>
 		 </div>
-		
+		 
 		 <nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		   <div class="navbar-header">
@@ -42,8 +43,8 @@
 	    	<div class="collapse navbar-collapse" id="myNavbar">
 			 <ul class="nav navbar-nav">
     			 <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
-				 <li><a href="#">OUR KITES</a></li>
-				 <li><a href="#">SHOP</a></li>
+				 <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
+				 <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
 				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">
                                   <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
@@ -53,7 +54,8 @@
                           </li>
 			 </ul>
 			 <ul class="nav navbar-nav navbar-right">
-    			<li><a href="#" data-toggle="popover" title="WELCOME BACK"  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
+    			<li><a href="#" data-toggle="popover" title="WELCOME BACK"  
+                               data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
                                      <span class="glyphicon glyphicon-user"></span></a></li>
 				 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
@@ -95,7 +97,7 @@
                       </span>
             </div>
 			<br><br>
-			<a href="Products.html" class="btn btn-primary btn-lg">BUY NOW</a>
+			<a href="#" class="btn btn-primary btn-lg">BUY NOW</a>
 			<br><br>
 			<h5><b>PRODUCT INFO</h5>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -118,12 +120,11 @@
 	  <h4> KITES BOUTIQUE</h4>
 	   
 	   <ul class="list-unstyled list-inline text-center">
-		   <i class="fa fa-envelope"></i>
-		   <i class="fa fa-facebook-square"></i>
-		   <i class="fa fa-pinterest"></i>
-		   <i class="fa fa-instagram"></i>
-	   </ul>
-   
+		   <i class="fa fa-envelope" id="emailIcon" onclick="emailClick()"></i>
+		   <i class="fa fa-facebook-square" id="facebook" onclick="iconClick()"></i>
+		   <i class="fa fa-pinterest" id="pinterest" onclick="pinterestClick()"></i>
+		   <i class="fa fa-instagram" id="insta" onclick="instaClick()"></i>
+           </ul>
           <!--Google map-->
 	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">
 	  <iframe src="https://maps.google.com/maps?q=midelton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"

@@ -14,6 +14,20 @@ function googleClick(){
 	window.open("https://www.google.ie/");
 }
 
+function pinterestClick(){
+        document.getElementById("pinterest");
+        window.open("https://www.pinterest.ie/lavenderblue28/kites/");
+}
+
+function emailClick(){
+        document.getElementById("emailIcon");
+        window.open("https://www.google.com/gmail/about/");
+}
+
+function instaClick(){
+        document.getElementById("insta");
+        window.open("https://www.instagram.com/explore/tags/kite/?hl=en");
+}
 function h1Click(){
         document.getElementById("title");
         window.open("KiteWebApplication/Homepage.jsp");
