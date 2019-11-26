@@ -39,6 +39,13 @@ h4{
 	position:relative;
 }
 
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+
+background-color: #70B5C3;
+}
+
 .navbar-inverse{
 	background-color:transparent;
 	border:none;
@@ -48,6 +55,7 @@ h4{
 .navbar-inverse .navbar-nav > li > a{
 	color:black;
 }
+
 
 .navbar-inverse li:hover{
 	background-color:#70B5C3;
@@ -80,19 +88,26 @@ h4{
 
 .carousel-inner > .item{
 	height:400px;
+        
 }
 
+#myCarousel{
+    position: relative;
+    left:1em;
+    width:98%;
+}
 
 
 .carousel-inner img{
 	object-fit:contain;
-	max-width:100%;
+	width:100%;
 	height:auto;															
 }
 
 
 .panel img{
 	height:180px;
+        
 }
 
 .panel > .panel-heading{

@@ -38,7 +38,7 @@
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
                           <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
-                          <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
+                          <li class="active"><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
                           <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
                           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">

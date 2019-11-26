@@ -55,6 +55,12 @@ h4{
 	position:relative;
 	
 }
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+
+background-color: #70B5C3;
+}
 
 .navbar-inverse{
 	background-color:transparent;

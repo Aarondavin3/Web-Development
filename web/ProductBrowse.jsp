@@ -40,7 +40,7 @@
                                     %>
                                  <li><a href="/KiteWebApplication/Homepage.jsp">OUR ROOTS</a></li>
                                  <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
-				 <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
+				 <li class="active"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
 				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">
                                  <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
@@ -69,7 +69,7 @@
                             <%}else{%>
                                  <li><a href="/KiteWebApplication/index.html">OUR ROOTS</a></li>
               			 <li><a href="/KiteWebApplication/index.html">OUR KITES</a></li>
-				 <li><a href="/KiteWebApplication/index.html">SHOP</a></li>
+				 <li class="active"><a href="/KiteWebApplication/index.html">SHOP</a></li>
 				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">
                                   <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>

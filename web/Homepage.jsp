@@ -35,7 +35,7 @@
                </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
-                          <li><a href="#">OUR ROOTS</a></li>
+                          <li class="active"><a href="#">OUR ROOTS</a></li>
                           <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
                           <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
                           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
@@ -51,7 +51,7 @@
                                  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
                               <span class="glyphicon glyphicon-user"></span></a></li> 
-                          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                          <li><a href="/KiteWebApplication/index.html"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                       </ul>
                   </div>
               </div>
