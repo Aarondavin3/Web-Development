@@ -37,10 +37,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">OUR ROOTS</a></li>
+                        <li><a href="#">OUR ROOTS</a></li>
                         <li><a href="#">OUR KITES</a></li>
                         <li><a href="#">SHOP</a></li>
-                        <li><a href="/KiteWebApplication/userManagement.jsp">USER MANAGEMENT</a></li>
+                        <li class="active"><a href="/KiteWebApplication/userManagement.jsp">USER MANAGEMENT</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                             <ul class="dropdown-menu">
                                 <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
@@ -74,12 +74,12 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">User Tasks</li>
                             <li class="active"><a href="/BootStrapLogin/UserManagement">User Management</a></li>
-                            <li><a href="#">add users</a></li>
-                            <li><a href="#">modify details</a></li>
+                            <li><a href="#">Add users</a></li>
+                            <li><a href="#">Modify details</a></li>
                          
                             <li class="nav-header">Product Tasks</li>
-                            <li><a href="#">set up products</a></li>
-                            <li><a href="#">allocate delivery</a></li>
+                            <li><a href="#">Set up products</a></li>
+                            <li><a href="#">Allocate delivery</a></li>
                         </ul>
                     </div>
                 </div>
