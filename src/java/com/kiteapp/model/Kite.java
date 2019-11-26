@@ -9,7 +9,7 @@ package com.kiteapp.model;
  *
  * @author adavi
  */
-public class Kite {
+  public abstract class Kite {
     private String name;
     private int kiteID;
     private String description;
