@@ -49,7 +49,7 @@
                           </li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#" data-toggle="popover" title="WELCOME BACK"  
+                          <li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
                                  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
                               <span class="glyphicon glyphicon-user"></span></a></li> 

@@ -45,7 +45,7 @@ public class loginServlet extends HttpServlet implements IConstants {
             }else{
                 request.getSession(true).setAttribute(IConstants.SESSION_KEY_USER, user);
                 if(user.getUserType().equals(IConstants.USER_TYPE_ADMIN)){
-                    RequestDispatcher rd = request.getRequestDispatcher("/Homepage.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("/adminHomepage.jsp");
                     rd.forward(request, response);
                 }else if (user.getUserType().equals(IConstants.USER_TYPE_GENERAL_USER)) {
                     RequestDispatcher rd = request.getRequestDispatcher("/Homepage.jsp");
