@@ -10,14 +10,14 @@ package com.kiteapp.model;
  * @author adavi
  */
 public class kiteUser {
-    private long id;
+    private int id;
     private String email;
     private String password;
     private String firstName;
     private String lastName;
     private String userType;
     
-    public kiteUser(long id, String email, String password, String firstName, String lastName, String userType) {
+    public kiteUser(int id, String email, String password, String firstName, String lastName, String userType) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -36,7 +36,7 @@ public class kiteUser {
     /**
      * @param id the id to set
      */
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

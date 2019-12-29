@@ -14,7 +14,7 @@ public class RegisteredUser extends kiteUser {
     private String deliveryInfo;
     private String creditCardInfo;
     
-    public RegisteredUser(long id, String email, String password, String firstName, String lastName, String userType) {
+    public RegisteredUser(int id, String email, String password, String firstName, String lastName, String userType) {
         super(id, email, password, firstName, lastName, userType);
     }
 

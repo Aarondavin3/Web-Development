@@ -1,0 +1,29 @@
+INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
+VALUES('kiteadmin@kiteboutique.com', 'kiteAdmin', 'System', 'Administrator','ADMIN');
+
+INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
+VALUES('kiteuser1@user.com', 'user1', 'Aoife', 'Kane','GENUSER');
+
+INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
+VALUES('kiteuser2@user.com', 'user2', 'Niamh', 'Fox','GENUSER');
+
+INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
+VALUES('kiteuser3@user.com', 'user3', 'Leah', 'Collins','GENUSER');
+
+INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
+VALUES('kiteuser4@user.com', 'user4', 'Mike', 'Jameson','GENUSER');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

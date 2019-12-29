@@ -13,7 +13,7 @@ public class Admin extends kiteUser {
     
     
     
-    public Admin(long id, String email, String password, String firstName, String lastName, String userType) {
+    public Admin(int id, String email, String password, String firstName, String lastName, String userType) {
         super(id, email, password, firstName, lastName, userType);
     }
     
