@@ -38,7 +38,7 @@
                           <li class="active"><a href="#">OUR ROOTS</a></li>
                           <li><a href="#">OUR KITES</a></li>
                           <li><a href="#">SHOP</a></li>
-                          <li><a href="userManagementServlet">USER MANAGEMENT</a></li>
+                          <li><a href="userManagementServlet?action=List">USER MANAGEMENT</a></li>
                           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">
                                   <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>

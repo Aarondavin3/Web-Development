@@ -1,4 +1,5 @@
 <%@page import="java.util.Vector"%>
+<%@page import="com.kiteapp.model.Kite"%>
 <%@page import="com.kiteapp.model.kiteUser"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
@@ -64,11 +65,11 @@
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <ul class="nav nav-list">
                             <li class="nav-header">User Tasks</li>
-                            <li class="active"><a href="productManagementServlet?action=List">User Management</a></li>
+                            <li class="active"><a href="/KiteWebApplication/UserManagement.jsp">User Management</a></li>
                             <li><a href="#">Add users</a></li>
                             <li><a href="#">Modify details</a></li>
                             <li class="nav-header">Product Tasks</li>
-                            <li><a href="productManagementServlet?action=List">View Products</a></li>
+                            <li><a href="/KiteWebApplication/productManagement.jsp">View Products</a></li>
                             <li><a href="#">Set up products</a></li>
                             <li><a href="#">Allocate delivery</a></li>
                         </ul>
@@ -97,27 +98,32 @@
 
                     <div class="jumbotron">
 
-                        <%--<% Vector<kiteUser> allUsers = (Vector<kiteUser>) session.getAttribute("SKALLUSERS");%>--%>
-                        <h1>User Management</h1>
+                       
+                        <h1>Product Management</h1>
                         
                         <p><a href="#" class="btn btn-primary btn-large">LEARN MORE &raquo;</a></p>
                         <p><table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
+                                    <th>Product Name</th>
+                                    <th>Colour</th>
+                                    <th>Shape</th>
+                                    <th>Material</th>
+                                    <th>Level</th>
+                                    <th>Cost&euro;</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${RKALLUSERS}" var="tempuser">    
+                            <c:forEach items="${RKALLPRODUCTS}" var="tempKite">    
                                 <tr>
-                                <td scope="row"><c:out value="${tempuser.getId()}"/></td>
-                                <td>${tempuser.firstName}"</td>
-                                <td>${tempuser.lastName}"</td>
-                                <td>${tempuser.email}"</td>
+                                <td scope="row"><c:out value="${tempKite.getKiteID()}"/></td>
+                                <td>${tempKite.name}"</td>
+                                <td>${tempKite.colour}"</td>
+                                <td>${tempKite.shape}"</td>
+                                <td>${tempKite.material}"</td>
+                                <td>${tempKite.level}"</td>
+                                <td>${tempKite.cost}"</td>
                                 <td><a> link to edit </a> </td>
                                 </tr>
                             </c:forEach>

@@ -110,5 +110,7 @@ public class kiteUser {
         this.userType = userType;
     }
 
-    
+    public kiteUser() {
+        
+    }
 }

@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  */
 public class DBManager {
     
-    private static final Logger logger = Logger.getLogger(DBManager.class.getName());
-    Connection dbConnection = null;
+    Logger logger = Logger.getLogger(DBManager.class.getName());
+   
     
     void loadJDBCDriver() {
 
@@ -27,17 +27,20 @@ public class DBManager {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         } catch (ClassNotFoundException ex) {
             logger.log(Level.SEVERE,null,ex);
+            System.out.println("error" + ex.getMessage());
         }
     }
     
     void checkConnection(){
         loadJDBCDriver();
         
+        Connection dbConnection = null;
         String strUrl = "jdbc:derby:kiteDB;create=true";
         try{
             dbConnection = DriverManager.getConnection(strUrl);
         } catch(SQLException ex){
             logger.log(Level.SEVERE,null,ex.getStackTrace());
+            System.out.println("error" + ex.getMessage());
         }
         
     }
@@ -45,11 +48,13 @@ public class DBManager {
     public Connection getConnection() {
         loadJDBCDriver();
         
+        Connection dbConnection = null;
         String strUrl = "jdbc:derby:kiteDB;create=true";
         try{
             dbConnection = DriverManager.getConnection(strUrl);
         } catch(SQLException ex){
             logger.log(Level.SEVERE,null,ex.getStackTrace());
+            System.out.println("error" + ex.getMessage());
         }
        return dbConnection;
     }

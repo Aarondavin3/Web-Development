@@ -1,5 +1,5 @@
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
-VALUES('kiteadmin@kiteboutique.com', 'kiteAdmin', 'System', 'Administrator','ADMIN');
+VALUES('kiteadmin@kiteboutique.com', 'kiteAdmin', 'System', 'Administrator','KITEADMIN');
 
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
 VALUES('kiteuser1@user.com', 'user1', 'Aoife', 'Kane','GENUSER');
@@ -13,6 +13,23 @@ VALUES('kiteuser3@user.com', 'user3', 'Leah', 'Collins','GENUSER');
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
 VALUES('kiteuser4@user.com', 'user4', 'Mike', 'Jameson','GENUSER');
 
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('Highlighter Delta', 'Multi', 'Triangular', 'Rip Stop Nylon', 'Beginner', 14.99);
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('Rocky Mountain Diamond', 'Multi', 'Diamond', 'Mylar Sheets', 'Beginner', 09.99);
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('Parachute Parafoil', 'Multi', 'Frameless', 'Rip Stop Nylon', 'Intermediate', 22.99);
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('DualLine Delta', 'Green&Black', 'DualLine Triangular', 'Rip Stop Nylon', 'Intermediate', 18.99);
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('Retro Diamond', 'Retro', 'Diamond', 'Rip Stop Nylon', 'Beginner', 11.99);
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('WindSurfing Parafoil', 'Multi', 'Frameless', 'Rip Stop Nylon', 'Advanced', 27.99);
 
 
 

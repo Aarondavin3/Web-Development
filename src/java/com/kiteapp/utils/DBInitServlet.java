@@ -3,15 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.kiteapp.servlets;
+package com.kiteapp.utils;
 
-import com.kiteapp.dao.userDAO;
-import com.kiteapp.model.kiteUser;
-import com.kiteapp.utils.IConstants;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Vector;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author adavi
  */
-public class userManagementServlet extends HttpServlet implements IConstants {
+public class DBInitServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,28 +27,32 @@ public class userManagementServlet extends HttpServlet implements IConstants {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       
-        String action = request.getParameter("action");
-        if(action.equals("List")){
-            listUsers(request,response);
-        }
-       
-        }
-    
-    private void listUsers(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+    @Override
+    public void init() throws ServletException {
         
-        userDAO userDAO = new userDAO();
-        Vector<kiteUser> vectorAllUsers = userDAO.getAllUsers();
+        DBSetup sdb = new DBSetup();
+        sdb.createTables();
+        sdb.insertSetupData();
+        sdb.showData();
         
-        request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS, vectorAllUsers);
-        
-        RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
-        rd.forward(request, response);
     }
     
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet DBInitServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet DBInitServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -95,4 +94,3 @@ public class userManagementServlet extends HttpServlet implements IConstants {
     }// </editor-fold>
 
 }
-

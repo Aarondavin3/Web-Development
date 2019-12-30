@@ -35,6 +35,8 @@ public class DBSetup {
         executeSqlScript(con, inpStr);
     }
      
+    
+     
      void insertSetupData() {
 
         DBManager dmbgr = new DBManager();
@@ -46,12 +48,17 @@ public class DBSetup {
         executeSqlScript(con, inpStr);
     }
      
+     
+     
+     
      public void showData() {
-         Statement stmt;
+        Statement stmt;
+        Statement state;
 
         DBManager dmbgr = new DBManager();
 
         Connection con = dmbgr.getConnection();
+        Connection conn = dmbgr.getConnection();
         
         try {
             stmt = con.createStatement();
@@ -71,6 +78,29 @@ public class DBSetup {
             stmt.close();
         } catch (SQLException sqlex) {
             logger.log(Level.SEVERE,null, sqlex);
+            System.out.println("ERROR" + sqlex.getMessage());
+        }
+        
+        try {
+            state = conn.createStatement();
+            ResultSet resultss = state.executeQuery("SELECT * FROM PRODUCT");
+            System.out.println("\n----------------------------------------------");
+            
+            while(resultss.next()) {
+                int id = resultss.getInt(1);
+                String name = resultss.getString(2);
+                String colour = resultss.getString(3);
+                String shape = resultss.getString(4);
+                String material = resultss.getString(5);
+                String level = resultss.getString(6);
+                float cost = resultss.getFloat(7);
+                logger.info(id + "\t\t" + name + "\t\t" + colour + "\t\t" + shape + "\t\t" + material + "\t\t" + level + "\t\t" + cost);
+            }
+            resultss.close();
+            state.close();
+            
+        } catch (SQLException sqlex) {
+            logger.log(Level.SEVERE,null,sqlex);
         }
      }
      
@@ -96,13 +126,15 @@ public class DBSetup {
                 currentStatement.execute(rawStatement);
             } catch (SQLException e) {
                 logger.log(Level.SEVERE, null, e);
+                System.out.println("error" + e.getMessage());
             } finally {
                 // Release resources
                 if (currentStatement != null) {
                     try {
                         currentStatement.close();
                     } catch (SQLException e) {
-                        logger.log(Level.SEVERE, null, e);;
+                        logger.log(Level.SEVERE, null, e);
+                        System.out.println("error" + e.getMessage());
                     }
                 }
                 currentStatement = null;

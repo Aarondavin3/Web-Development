@@ -8,6 +8,15 @@
         <servlet-name>userManagementServlet</servlet-name>
         <servlet-class>com.kiteapp.servlets.userManagementServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DBInitServlet</servlet-name>
+        <servlet-class>com.kiteapp.utils.DBInitServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>productManagementServlet</servlet-name>
+        <servlet-class>com.kiteapp.servlets.productManagementServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
@@ -15,6 +24,14 @@
     <servlet-mapping>
         <servlet-name>userManagementServlet</servlet-name>
         <url-pattern>/userManagementServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DBInitServlet</servlet-name>
+        <url-pattern>/DBInitServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productManagementServlet</servlet-name>
+        <url-pattern>/productManagementServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

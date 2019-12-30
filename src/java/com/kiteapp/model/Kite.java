@@ -9,10 +9,9 @@ package com.kiteapp.model;
  *
  * @author adavi
  */
-  public abstract class Kite {
+  public class Kite {
     private String name;
     private int kiteID;
-    private String description;
     private String colour;
     private String shape;
     private String material;
@@ -111,18 +110,9 @@ package com.kiteapp.model;
         this.colour = colour;
     }
 
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
+   
+   
 
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  
     
 }
