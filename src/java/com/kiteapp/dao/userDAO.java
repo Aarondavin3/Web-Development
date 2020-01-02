@@ -100,9 +100,9 @@ public class userDAO {
        public void insertUser(kiteUser newUser){
         
         String stmtNewUser = "INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)\n VALUES('" + newUser.getEmail() + "', '" + newUser.getPassword() + "', '" + newUser.getFirstName() + "', '" + newUser.getLastName() + "','" + newUser.getUserType() + "')";
-        DBManager dmbgr = new DBManager();
+        DBManager dbmgr = new DBManager();
         Statement currentStatement = null;
-        Connection con = dmbgr.getConnection();
+        Connection con = dbmgr.getConnection();
         try {
             // Execute statement
             currentStatement = con.createStatement();
@@ -111,5 +111,38 @@ public class userDAO {
             logger.log(Level.SEVERE, null, sqlExcept);
         }
     }
+       
+       public void updateUser(kiteUser updateUser){
+           String editUser = "UPDATE USERDATA SET EMAIL='" + updateUser.getEmail() + "',PASSWORD='" + updateUser.getPassword()
+                   + "',FNAME='" + updateUser.getFirstName() + "',LNAME='" + updateUser.getLastName() 
+                   + "',USERTYPE='" + updateUser.getUserType() + "' WHERE USER_ID=" + updateUser.getId();
+           
+           DBManager dbmgr = new DBManager();
+           PreparedStatement currentStatement = null;
+           Connection conn = dbmgr.getConnection();
+           try{
+               currentStatement = conn.prepareStatement(editUser);
+               currentStatement.executeUpdate();
+               
+           } catch (SQLException sqlEx){
+               logger.log(Level.SEVERE,null,sqlEx);
+           }
+       }
+       
+       public void DeleteUser(String dUser){
+           kiteUser deletedUser = new kiteUser();
+           String deleteUser = "DELETE FROM USERDATA WHERE EMAIL ='" + dUser + "'";
+           DBManager dbmgr = new DBManager();
+           PreparedStatement st = null;
+           Connection conn = dbmgr.getConnection();
+           try{
+               st = conn.prepareStatement(deleteUser);
+               st.executeUpdate();
+           } catch(SQLException ex){
+               logger.log(Level.SEVERE, null,ex);
+           }
+           
+           
+       }
     
 }

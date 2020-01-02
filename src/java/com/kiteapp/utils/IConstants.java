@@ -17,6 +17,7 @@ public interface IConstants {
     
     //Session Keys
     public static final String SESSION_KEY_USER = "SKUSER";
+    public static final String REQUEST_KEY_USER="RKUSER";
     public static final String REQUEST_KEY_ALL_USERS = "RKALLUSERS";
     public static final String REQUEST_KEY_ALL_PRODUCTS = "RKALLPRODUCTS";
 }

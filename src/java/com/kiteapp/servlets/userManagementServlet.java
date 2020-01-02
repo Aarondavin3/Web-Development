@@ -39,6 +39,24 @@ public class userManagementServlet extends HttpServlet implements IConstants {
         if(action.equals("List")){
             listUsers(request,response);
         }
+        if(action.equals("addInit")){
+            addInitUsers(request,response);
+        }
+        if(action.equals("add")){
+            addUser(request,response);
+        }
+        if(action.equals("listUser")){
+            listUser(request,response);
+        }
+        if(action.equals("updateInit")){
+            updateInitUsers(request,response);
+        }
+        if(action.equals("update")){
+            updateUser(request,response);
+        }
+        if(action.equals("delete")){
+            deleteUser(request, response);
+        }
        
         }
     
@@ -52,6 +70,95 @@ public class userManagementServlet extends HttpServlet implements IConstants {
         
         RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
         rd.forward(request, response);
+    }
+    
+    private void listUser(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+      
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/updateUser.jsp");
+        rd.forward(request, response);
+    }
+    
+    private void addInitUsers(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/addUser.jsp");
+        rd.forward(request, response);
+    }
+    
+    private void addUser(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        kiteUser newUser = new kiteUser();
+        String email = request.getParameter("EMAIL");
+        newUser.setEmail(email);
+        String password = request.getParameter("PASSWORD");
+        newUser.setPassword(password);
+        String fName = request.getParameter("FNAME");
+        newUser.setFirstName(fName);
+        String lName = request.getParameter("LNAME");
+        newUser.setLastName(lName);
+        String userType = request.getParameter("USERTYPE");
+        newUser.setUserType(userType);
+        
+        userDAO userDAO = new userDAO();
+        userDAO.insertUser(newUser);
+        
+        Vector<kiteUser> allUsersVect = userDAO.getAllUsers();
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS, allUsersVect);
+        RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
+        rd.forward(request, response);
+        
+    }
+    
+     private void updateInitUsers(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/updateUser.jsp");
+        rd.forward(request, response);
+    }
+    
+    private void updateUser(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        kiteUser updateUser = new kiteUser();
+        String email = request.getParameter("EMAIL");
+        updateUser.setEmail(email);
+        String password = request.getParameter("PASSWORD");
+        updateUser.setPassword(password);
+        String fName = request.getParameter("FNAME");
+        updateUser.setFirstName(fName);
+        String lName = request.getParameter("LNAME");
+        updateUser.setLastName(lName);
+        String userType = request.getParameter("USERTYPE");
+        updateUser.setUserType(userType);
+        
+        userDAO userDAO = new userDAO();
+        userDAO.updateUser(updateUser);
+        
+        Vector<kiteUser> allUsersVect = userDAO.getAllUsers();
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS,allUsersVect);
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
+        rd.forward(request, response);
+        
+    }
+    
+    private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        kiteUser deleteUser = new kiteUser();
+        String user = request.getParameter("link");
+        userDAO userDAO = new userDAO();
+        userDAO.DeleteUser(user);
+        
+        Vector<kiteUser> allUsersVect = userDAO.getAllUsers();
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS,allUsersVect);
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
+        rd.forward(request, response);
+
     }
     
 

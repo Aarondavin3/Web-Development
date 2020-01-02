@@ -1,3 +1,9 @@
+<%-- 
+    Document   : addUser
+    Created on : 02-Jan-2020, 12:29:28
+    Author     : adavi
+--%>
+
 <%@page import="java.util.Vector"%>
 <%@page import="com.kiteapp.model.kiteUser"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -64,9 +70,9 @@
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <ul class="nav nav-list">
                             <li class="nav-header">User Tasks</li>
-                            <li class="active"><a href="userManagementServlet?action=List">User Management</a></li>
-                            <li><a href="userManagementServlet?action=addInit">Add users</a></li>
-                            <li><a href="userManagementServlet?action=listUser">Modify details</a></li>
+                            <li><a href="userManagementServlet?action=List">User Management</a></li>
+                            <li class="active"><a href="#">Add users</a></li>
+                            <li><a href="#">Modify details</a></li>
                             <li class="nav-header">Product Tasks</li>
                             <li><a href="productManagementServlet?action=List">View Products</a></li>
                             <li><a href="#">Set up products</a></li>
@@ -94,67 +100,44 @@
 
                 <div class="col-sm-12" id="contentContainer">
                     <span style="font-size:30px;cursor:pointer;position:relative;left:1em;" onclick="openNav()">&#9776;</span>
-
-                    <div class="jumbotron">
-
-                        <%--<% Vector<kiteUser> allUsers = (Vector<kiteUser>) session.getAttribute("SKALLUSERS");%>--%>
-                        <h1>User Management</h1>
-                        
-                        <p><a href="<c:url value='/userManagementServlet?action=addInit' />" class="btn btn-primary btn-large">ADD NEW USER &raquo;</a></p>
-                        <p><table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${RKALLUSERS}" var="tempuser">    
-                                <tr>
-                                <td scope="row"><c:out value="${tempuser.getId()}"/></td>
-                                <td>${tempuser.firstName}"</td>
-                                <td>${tempuser.lastName}"</td>
-                                <td>${tempuser.email}"</td>
-                                <td><a><a href="<c:url value='/userManagementServlet?action=delete' />" class="btn btn-primary btn-large">DELETE &raquo;</a></a> </td>
-                                </tr>
-                            </c:forEach>
-
-                            </tbody>
-                        </table>
-                    </div>
-                        
+                    
                     <c:url var="postUrl" value="/userManagementServlet">
-                        <c:param name="action" value="delete"/>
+                        <c:param name="action" value="update"/>
                     </c:url>
-                       <form action="${postUrl}" method="POST">
-                            <input type="text"name="link">
-                            <input type="submit">
-                        </form>
-
+                    
+                    <% kiteUser user1 = (kiteUser) request.getAttribute("R");%>
+                        <c:out value="${tempuser.getId()}"/>
+                    <h3>UPDATE USER:</h3>
+                    <div class="inputboxes">
+                    <form action="${postUrl}" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" name="EMAIL" class="form-control" value="<%=user1.getEmail()%>" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" name="PASSWORD"class="form-control" value="<%=user1.getPassword()%>" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="fname">First Name:</label>
+                            <input type="fname" name="FNAME" class="form-control" value="<%=user1.getFirstName()%>" id="fname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name:</label>
+                            <input type="lname" name="LNAME" class="form-control" value="<%=user1.getLastName()%>" id="lname">
+                        </div>
+                        <div class="form-group">
+                            <label for="usertype">User Type:</label>
+                            <input type="usertype" name="USERTYPE" class="form-control" value="<%=user1.getUserType()%>" id="usertype">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    
+                    </div>
                 </div>
-            </div>
-        </div>
-                        <br><br><br><br><br><br>               
-        <footer class="container-fluid text-center">
-	
-	  <h4> KITES BOUTIQUE</h4>
-	   
-	   <ul class="list-unstyled list-inline text-center">
-		   <i class="fa fa-envelope" id="emailIcon" onclick="emailClick()"></i>
-		   <i class="fa fa-facebook-square" id="facebook" onclick="iconClick()"></i>
-		   <i class="fa fa-pinterest" id="pinterest" onclick="pinterestClick()"></i>
-		   <i class="fa fa-instagram" id="insta" onclick="instaClick()"></i>
-           </ul>
-   <!--Google map-->
-	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">
-	  <iframe src="https://maps.google.com/maps?q=midelton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-		style="border:0" allowfullscreen></iframe>
-	</div>
-	</footer>
-
-
+    
     </body>
 </html>
