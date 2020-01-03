@@ -98,9 +98,45 @@
                     <div class="jumbotron">
 
                         <%--<% Vector<kiteUser> allUsers = (Vector<kiteUser>) session.getAttribute("SKALLUSERS");%>--%>
-                        <h1>User Management</h1>
-                        
-                        <p><a href="<c:url value='/userManagementServlet?action=addInit' />" class="btn btn-primary btn-large">ADD NEW USER &raquo;</a></p>
+                    <h1>User Management</h1>
+                     <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p><a href="<c:url value='/userManagementServlet?action=addInit' />" class="btn btn-primary btn-large">ADD NEW USER</a></p>
+                        </div>
+                        <div class="col-sm-3">
+                        <c:url var="postUrl" value="/userManagementServlet">
+                         <c:param name="action" value="delete"/>
+                        </c:url>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                         DELETE USER
+                        </button>
+                <form action="${postUrl}" method="POST">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">DELETE USER</h5
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                
+                            </div>
+                              <div class="modal-body">
+                               <input type="text"name="link" placeholder=" Enter an email to delete">
+                              </div>
+                              <div class="modal-footer">
+                                 <button class="btn btn-lg btn-primary center-block"  type="submit">DELETE USER</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+                    </div>   
+                       </div>    
+                        </div>    
+                <br><br>
                         <p><table class="table table-hover">
                             <thead>
                                 <tr>
@@ -125,18 +161,17 @@
                             </tbody>
                         </table>
                     </div>
-                        
-                    <c:url var="postUrl" value="/userManagementServlet">
-                        <c:param name="action" value="delete"/>
-                    </c:url>
-                       <form action="${postUrl}" method="POST">
-                            <input type="text"name="link">
-                            <input type="submit">
-                        </form>
-
                 </div>
             </div>
         </div>
+                
+                <c:url var="getUrl" value="/userManagementServlet">
+                         <c:param name="action" value="updateInit"/>
+                        </c:url>
+                <form action="${getUrl}" method="POST">
+                    <input type="text" name="email"
+                    <input type="submit">
+                </form>
                         <br><br><br><br><br><br>               
         <footer class="container-fluid text-center">
 	

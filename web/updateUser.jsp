@@ -6,9 +6,16 @@
 
 <%@page import="java.util.Vector"%>
 <%@page import="com.kiteapp.model.kiteUser"%>
+<%@page import="com.kiteapp.servlets.userManagementServlet"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% 
+    String email = request.getParameter("email");
+    kiteUser user1 = new kiteUser();
+    user1.getEmail();
+%>
 <html lang="en">
     <head>
+        
         <title>Kites Boutique </title>
         <!--- required meta tags --->
         <meta charset="utf-8">	
@@ -105,30 +112,35 @@
                         <c:param name="action" value="update"/>
                     </c:url>
                     
-                    <% kiteUser user1 = (kiteUser) request.getAttribute("R");%>
-                        <c:out value="${tempuser.getId()}"/>
+          
+                    
+                    
                     <h3>UPDATE USER:</h3>
                     <div class="inputboxes">
                     <form action="${postUrl}" method="POST">
                         <div class="form-group">
                             <label for="email">Email Address:</label>
-                            <input type="email" name="EMAIL" class="form-control" value="<%=user1.getEmail()%>" id="email">
+                            <input type="email" name="EMAIL" class="form-control" value="${tempuser.email}" id="email">
+                        </div>
+                         <div class="form-group">
+                            <label for="pwd">ID:</label>
+                            <input type="id" name="ID"class="form-control" value="${userID}" id="id">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
-                            <input type="password" name="PASSWORD"class="form-control" value="<%=user1.getPassword()%>" id="pwd">
+                            <input type="password" name="PASSWORD"class="form-control" value="<%=request.getParameter("password")%>" id="pwd">
                         </div>
                         <div class="form-group">
                             <label for="fname">First Name:</label>
-                            <input type="fname" name="FNAME" class="form-control" value="<%=user1.getFirstName()%>" id="fname">
+                            <input type="fname" name="FNAME" class="form-control" value="" id="fname">
                         </div>
                         <div class="form-group">
                             <label for="lname">Last Name:</label>
-                            <input type="lname" name="LNAME" class="form-control" value="<%=user1.getLastName()%>" id="lname">
+                            <input type="lname" name="LNAME" class="form-control" value="${lName}" id="lname">
                         </div>
                         <div class="form-group">
                             <label for="usertype">User Type:</label>
-                            <input type="usertype" name="USERTYPE" class="form-control" value="<%=user1.getUserType()%>" id="usertype">
+                            <input type="usertype" name="USERTYPE" class="form-control" value="${userType}" id="usertype">
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox"> Remember me</label>
@@ -138,6 +150,7 @@
                     
                     </div>
                 </div>
-    
+                        
+             
     </body>
 </html>

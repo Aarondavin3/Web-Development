@@ -113,7 +113,13 @@ public class userManagementServlet extends HttpServlet implements IConstants {
     }
     
      private void updateInitUsers(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+     throws ServletException, IOException {
+         
+         kiteUser user = new kiteUser();
+         String email = request.getParameter("email");
+         userDAO userDAO = new userDAO();
+         userDAO.getUserByEmail(email);
+         request.setAttribute(IConstants.REQUEST_KEY_USER,userDAO.getUserByEmail(email));
         
         RequestDispatcher rd = request.getRequestDispatcher("/updateUser.jsp");
         rd.forward(request, response);
@@ -175,6 +181,14 @@ public class userManagementServlet extends HttpServlet implements IConstants {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        kiteUser user = new kiteUser();
+         String email = request.getParameter("email");
+         userDAO userDAO = new userDAO();
+         userDAO.getUserByEmail(email);
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/updateUser.jsp");
+        rd.forward(request, response);
     }
 
     /**
