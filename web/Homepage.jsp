@@ -51,7 +51,7 @@
                                  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
                               <span class="glyphicon glyphicon-user"></span></a></li> 
-                          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                          <li><a href="/KiteWebApplication/Cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                       </ul>
                   </div>
               </div>

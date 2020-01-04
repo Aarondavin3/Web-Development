@@ -6,6 +6,7 @@
 package com.kiteapp.servlets;
 
 import com.kiteapp.dao.userDAO;
+import com.kiteapp.model.Kite;
 import com.kiteapp.model.kiteUser;
 import com.kiteapp.utils.IConstants;
 import java.io.IOException;
@@ -165,6 +166,14 @@ public class userManagementServlet extends HttpServlet implements IConstants {
         RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
         rd.forward(request, response);
 
+    }
+    
+    private void addProductToCart(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        Kite kite = new Kite();
+        String price = request.getParameter("price");
+        userDAO userDAO = new userDAO();
     }
     
 

@@ -249,3 +249,29 @@ position:absolute;
     margin:auto;
 }
 
+.form-control {
+  width: auto;
+}
+
+.form-control-small {
+  width: 100px;
+}
+
+.form-control-large {
+  width: 310px;
+}
+
+.media-left img {
+    height:50px;
+    width:300px;
+}
+
+.media-left #paypal {
+    height:70px;
+    width:200px;
+}
+
+.orderButton a {
+    margin:auto;
+    text-align: center;
+}
