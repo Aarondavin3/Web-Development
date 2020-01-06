@@ -7,11 +7,14 @@ package com.kiteapp.dao;
 
 import com.kiteapp.model.Kite;
 import com.kiteapp.utils.DBManager;
+import static com.sun.xml.ws.security.impl.policy.Constants.logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Vector;
+import java.util.logging.Level;
 
 /**
  *
@@ -59,6 +62,33 @@ public class productDAO {
             ex.printStackTrace();
         }
         return kiteData;
+    }
+    
+    public void insertKite(Kite newKite){
+        String stmtNewKite="INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)\n VALUES('" + newKite.getName() + "', '" + newKite.getColour() + "', '" + newKite.getShape() + "', '" + newKite.getMaterial() + "', '" + newKite.getLevel() + "', " + newKite.getCost() + ")";
+        DBManager dbmgr = new DBManager();
+        Statement currentStatement = null;
+        Connection conn = dbmgr.getConnection();
+        try{
+            currentStatement = conn.createStatement();
+            currentStatement.execute(stmtNewKite);
+        } catch (SQLException sqlEx){
+            logger.log(Level.SEVERE, null, sqlEx);
+        }
+    }
+    
+    public void DeleteProduct(String dProduct){
+        Kite deleteKite = new Kite();
+        String dKite= "DELETE FROM PRODUCT WHERE NAME='" + dProduct + "'";
+        DBManager dbmgr = new DBManager();
+        PreparedStatement st = null;
+        Connection conn = dbmgr.getConnection();
+        try{
+            st=conn.prepareStatement(dKite);
+            st.executeUpdate();
+        } catch(SQLException ex) {
+            logger.log(Level.SEVERE,null,ex);
+        }
     }
     
 }

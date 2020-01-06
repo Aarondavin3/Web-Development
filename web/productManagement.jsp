@@ -69,8 +69,8 @@
                             <li><a href="#">Add users</a></li>
                             <li><a href="#">Modify details</a></li>
                             <li class="nav-header">Product Tasks</li>
-                            <li><a href="/KiteWebApplication/productManagement.jsp">View Products</a></li>
-                            <li><a href="#">Set up products</a></li>
+                            <li><a href="productManagementServlet?action=List">View Products</a></li>
+                            <li><a href="productManagementServlet?action=addInit">Set up products</a></li>
                             <li><a href="#">Allocate delivery</a></li>
                         </ul>
                     </div>
@@ -101,35 +101,98 @@
                        
                         <h1>Product Management</h1>
                         
-                        <p><a href="#" class="btn btn-primary btn-large">LEARN MORE &raquo;</a></p>
-                        <p><table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Product Name</th>
-                                    <th>Colour</th>
-                                    <th>Shape</th>
-                                    <th>Material</th>
-                                    <th>Level</th>
-                                    <th>Cost&euro;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p href="productManagementServlet?action=addInit" class="btn btn-primary btn-large">ADD PRODUCTS</a></p>
+                            </div>
+                              <div class="col-sm-3">
+                        <c:url var="postUrl" value="/productManagementServlet">
+                         <c:param name="action" value="delete"/>
+                        </c:url>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                         DELETE PRODUCT
+                        </button>
+                        <form action="${postUrl}" method="POST">
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                         <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">DELETE USER</h5
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                
+                                </div>
+                            <div class="modal-body">
+                               <input type="text"name="link" id="delete" placeholder=" Enter kite name to delete">
+                            </div>
+                              <div class="modal-footer">
+                                 <button class="btn btn-lg btn-primary center-block"  type="submit">DELETE PRODUCT</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+                    </div>   
+                       </div>    
+                              
+                        <br><br>     
+                        <c:url var="posTUrl" value="/userManagementServlet">
+                         <c:param name="action" value="update"/>
+                        </c:url>
+                        <div class="container-fluid">
+                                <div class="col-sm-2" style="color: #70B5C3">
+                                    <strong>USER ID</strong>
+                                </div>
+                                <div class="col-sm-2" style="color: #70B5C3">
+                                    <strong>PRODUCT NAME</strong>
+                                </div>
+                                <div class="col-sm-2" style="color: #70B5C3">
+                                    <strong>COLOUR</strong>
+                                </div>
+                                <div class="col-sm-2" style="color: #70B5C3">
+                                    <strong>MATERIAL</strong>
+                                </div>
+                                <div class="col-sm-2" style="color: #70B5C3">
+                                    <strong>LEVEL</strong>
+                                </div>
+                                <div class="col-sm-2" style="color: #70B5C3">
+                                    <strong>COST</strong>
+                                </div>
+                            </div>                        
+                                                  
                             <c:forEach items="${RKALLPRODUCTS}" var="tempKite">    
-                                <tr>
-                                <td scope="row"><c:out value="${tempKite.getKiteID()}"/></td>
-                                <td>${tempKite.name}"</td>
-                                <td>${tempKite.colour}"</td>
-                                <td>${tempKite.shape}"</td>
-                                <td>${tempKite.material}"</td>
-                                <td>${tempKite.level}"</td>
-                                <td>${tempKite.cost}"</td>
-                                <td><a> link to edit </a> </td>
-                                </tr>
+                                
+                            <form action="${posTUrl}" method="POST">  
+                                
+                                <div class="container-fluid">
+                                    <div class="form-row">
+                                        <div class="col-sm-2">
+                                            <input type="text" name="id" value="${tempKite.getKiteID()}" id="ID"/>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input type="text" name="pName" value="${tempKite.name}" id="pName"/>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input type="text" name="colour" value="${tempKite.colour}" id="colour"/>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input type="text" name="material" value="${tempKite.material}" id="material"/>
+                                        </div>
+                                        <div class="col-sm-2">
+                                             <input type="text" name="level" value="${tempKite.level}" id="level"/>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input type="text" name="cost" value="&euro; ${tempKite.cost}" id="cost"/>
+                                       </div>
+                                    </div>
+                                </div>
+                            </form>   
                             </c:forEach>
 
-                            </tbody>
-                        </table>
+                            
                     </div>
 
                 </div>

@@ -290,4 +290,11 @@ input[type=text] {
     width:300px;
 }
 
+#pName{
+    width:168px;
+}
+
+#delete {
+    width:300px;
+}
 

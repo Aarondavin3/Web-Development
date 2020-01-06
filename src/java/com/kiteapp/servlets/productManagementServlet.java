@@ -39,6 +39,15 @@ public class productManagementServlet extends HttpServlet {
         if(action.equals("List")){
             listProducts(request,response);
         }
+        if(action.equals("addInit")){
+            addInitProducts(request, response);
+        }
+        if(action.equals("add")){
+            addProduct(request, response);
+        }
+        if(action.equals("delete")){
+            deleteProduct(request,response);
+        }
     }
     
     private void listProducts(HttpServletRequest request, HttpServletResponse response)
@@ -52,7 +61,56 @@ public class productManagementServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("/productManagement.jsp");
         rd.forward(request, response);
     }
-
+    
+    private void addInitProducts(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/addProduct.jsp");
+        rd.forward(request, response);
+    }
+    
+    
+    private void addProduct(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        Kite newKite = new Kite();
+        String name = request.getParameter("NAME");
+        newKite.setName(name);
+        String colour = request.getParameter("COLOUR");
+        newKite.setColour(colour);
+        String shape = request.getParameter("SHAPE");
+        newKite.setShape(shape);
+        String material = request.getParameter("MATERIAL");
+        newKite.setMaterial(material);
+        String level = request.getParameter("LEVEL");
+        newKite.setLevel(level);
+        float cost =  Float.valueOf(request.getParameter("COST"));
+        newKite.setCost(cost);
+        
+        productDAO prodDAO = new productDAO();
+        prodDAO.insertKite(newKite);
+        
+        Vector<Kite> allProductsVect = prodDAO.getAllProducts();
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_PRODUCTS, allProductsVect);
+        RequestDispatcher rd = request.getRequestDispatcher("/productManagement.jsp");
+        rd.forward(request, response);
+        
+    }
+    
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        Kite deleteKite = new Kite();
+        String kiteName = request.getParameter("link");
+        productDAO prodDAO = new productDAO();
+        prodDAO.DeleteProduct(kiteName);
+        
+        Vector<Kite> allKiteVect = prodDAO.getAllProducts();
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_PRODUCTS, allKiteVect);
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/productManagement.jsp");
+        rd.forward(request, response);
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -65,6 +123,7 @@ public class productManagementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
       
         
         

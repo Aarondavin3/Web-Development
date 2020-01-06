@@ -183,13 +183,7 @@ public class userManagementServlet extends HttpServlet implements IConstants {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        kiteUser user = new kiteUser();
-         String email = request.getParameter("email");
-         userDAO userDAO = new userDAO();
-         userDAO.getUserByEmail(email);
         
-        RequestDispatcher rd = request.getRequestDispatcher("/updateUser.jsp");
-        rd.forward(request, response);
     }
 
     /**
