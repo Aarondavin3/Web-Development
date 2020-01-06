@@ -103,6 +103,7 @@
                       <div class="row">
                         <div class="col-sm-3">
                           <p><a href="<c:url value='/userManagementServlet?action=addInit' />" class="btn btn-primary btn-large">ADD NEW USER</a></p>
+                          
                         </div>
                         <div class="col-sm-3">
                         <c:url var="postUrl" value="/userManagementServlet">
@@ -135,31 +136,70 @@
                 </form>
                     </div>   
                        </div>    
-                        </div>    
+                         
                 <br><br>
-                        <p><table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${RKALLUSERS}" var="tempuser">    
-                                <tr>
-                                <td scope="row"><c:out value="${tempuser.getId()}"/></td>
-                                <td>${tempuser.firstName}"</td>
-                                <td>${tempuser.lastName}"</td>
-                                <td>${tempuser.email}"</td>
-                                <td><a><a href="<c:url value='/userManagementServlet?action=delete' />" class="btn btn-primary btn-large">DELETE &raquo;</a></a> </td>
-                                </tr>
-                            </c:forEach>
-
-                            </tbody>
-                        </table>
+                        <c:url var="posTUrl" value="/userManagementServlet">
+                         <c:param name="action" value="update"/>
+                        </c:url>
+                            <div class="container-fluid">
+                                    <div class="col-sm-2" style="color: #70B5C3">
+                                        <strong>USER ID</strong>
+                                    </div>
+                                     <div class="col-sm-2" style="color: #70B5C3">
+                                        <strong>FIRST NAME</strong>
+                                    </div>
+                                    <div class="col-sm-2" style="color: #70B5C3">
+                                        <strong>LAST NAME</strong>
+                                    </div>
+                                    <div class="col-sm-2" style="color: #70B5C3">
+                                        <strong>EMAIL</strong>
+                                    </div>
+                                <div class="col-sm-2">
+                                    
+                                </div>
+                            </div>                        
+                            <c:forEach items="${RKALLUSERS}" var="tempuser">
+                                
+                            <form action="${posTUrl}" method="POST">
+                                
+                                <div class="container-fluid">
+                                  <div class="form-row">
+                                    <div class="col-sm-2">
+                                        
+                                        <input type="text" name="id" value="${tempuser.getId()}" id ="ID"/>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        
+                                        <input type = "text" name ="fname" value="${tempuser.firstName}" id="fname">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        
+                                       <input type = "text" name ="lname" value="${tempuser.lastName}" id="lname">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        
+                                         <input type = "text" name ="email" value="${tempuser.email}" id="email" class="emailBox">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button class="btn btn-sm btn-primary center-block"  type="submit">UPDATE USER</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                 
+                               
+                                
+                                
+                             </form>
+                              </c:forEach>       
+                            
+                           
+                       
+                        
+                      
+                               
                     </div>
                 </div>
             </div>
@@ -169,7 +209,7 @@
                          <c:param name="action" value="updateInit"/>
                         </c:url>
                 <form action="${getUrl}" method="POST">
-                    <input type="text" name="email"
+                    <input type="text" name="mail"
                     <input type="submit">
                 </form>
                         <br><br><br><br><br><br>               

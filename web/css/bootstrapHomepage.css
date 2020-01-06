@@ -275,3 +275,19 @@ position:absolute;
     margin:auto;
     text-align: center;
 }
+
+.col-sm-3{
+    font-family: 'Lucida Console';
+    font-size: 16px;
+}
+
+input[type=text] {
+  border: 2px #70B5C3;
+  border-radius: 4px;
+}
+
+.emailBox{
+    width:300px;
+}
+
+

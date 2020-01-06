@@ -23,7 +23,7 @@ import java.util.logging.Level;
  */
 public class userDAO {
     
-    public kiteUser getUserByEmail(String email){
+    public  kiteUser getUserByEmail(String email){
         DBManager dbmgr = new DBManager();
         Connection conn = dbmgr.getConnection();
         int userID = 0;
@@ -32,6 +32,7 @@ public class userDAO {
         String lName = null;
         String userType = null;
         kiteUser tempUser = new kiteUser();
+        
         
         String query = "SELECT * FROM USERDATA WHERE EMAIL=" + "'" + email + "'";
         try {
@@ -43,17 +44,57 @@ public class userDAO {
                 fName = rs.getString(4);
                 lName = rs.getString(5);
                 userType = rs.getString(6);
+                
+                tempUser.setEmail(email);
+                tempUser.setId(userID);
+                tempUser.setFirstName(fName);
+                tempUser.setLastName(lName);
+                tempUser.setPassword(password);
+                tempUser.setUserType(userType);
+                
             }
         } catch (SQLException ex){
             ex.printStackTrace();
         }
-        tempUser.setEmail(email);
-        tempUser.setId(userID);
-        tempUser.setFirstName(fName);
-        tempUser.setLastName(lName);
-        tempUser.setPassword(password);
-        tempUser.setUserType(userType);
+        
         return tempUser;
+    }
+    
+    public Vector <kiteUser> getUsersByEmail(String email){
+        DBManager dbmgr = new DBManager();
+        Connection conn = dbmgr.getConnection();
+        int userID = 0;
+        String password = null;
+        String fName = null;
+        String lName = null;
+        String userType = null;
+        kiteUser tempUser = new kiteUser();
+        Vector<kiteUser> userData = new Vector();
+        
+        String query = "SELECT * FROM USERDATA WHERE EMAIL=" + "'" + email + "'";
+        try {
+            PreparedStatement prepstate = conn.prepareStatement(query);
+            ResultSet rs = prepstate.executeQuery();
+            while(rs.next()){
+                userID = rs.getInt(1);
+                password = rs.getString(3);
+                fName = rs.getString(4);
+                lName = rs.getString(5);
+                userType = rs.getString(6);
+                
+                tempUser.setEmail(email);
+                tempUser.setId(userID);
+                tempUser.setFirstName(fName);
+                tempUser.setLastName(lName);
+                tempUser.setPassword(password);
+                tempUser.setUserType(userType);
+                userData.add(tempUser);
+            }
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        
+        return userData;
     }
     
     
@@ -112,20 +153,24 @@ public class userDAO {
         }
     }
        
-       public void updateUser(kiteUser updateUser){
-           String editUser = "UPDATE USERDATA SET EMAIL='" + updateUser.getEmail() + "',PASSWORD='" + updateUser.getPassword()
-                   + "',FNAME='" + updateUser.getFirstName() + "',LNAME='" + updateUser.getLastName() 
-                   + "',USERTYPE='" + updateUser.getUserType() + "' WHERE USER_ID=" + updateUser.getId();
+       public static void updateUser(String fname, String lname, String email) throws SQLException{
+           String editUser = "UPDATE USERDATA SET FNAME = ?, LNAME = ? WHERE EMAIL = ?";
            
            DBManager dbmgr = new DBManager();
-           PreparedStatement currentStatement = null;
            Connection conn = dbmgr.getConnection();
+           PreparedStatement currentStatement = null;
+           
            try{
                currentStatement = conn.prepareStatement(editUser);
+               currentStatement.setString(1, fname);
+               currentStatement.setString(2, lname);
+               currentStatement.setString(3, email);
+              
                currentStatement.executeUpdate();
                
            } catch (SQLException sqlEx){
                logger.log(Level.SEVERE,null,sqlEx);
+               sqlEx.printStackTrace();
            }
        }
        

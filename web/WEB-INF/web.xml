@@ -17,6 +17,10 @@
         <servlet-name>productManagementServlet</servlet-name>
         <servlet-class>com.kiteapp.servlets.productManagementServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>kiteServlet</servlet-name>
+        <servlet-class>com.kiteapp.servlets.kiteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
@@ -32,6 +36,10 @@
     <servlet-mapping>
         <servlet-name>productManagementServlet</servlet-name>
         <url-pattern>/productManagementServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>kiteServlet</servlet-name>
+        <url-pattern>/kiteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

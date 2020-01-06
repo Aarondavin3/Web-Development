@@ -11,4 +11,8 @@ package com.kiteapp.model;
  */
 public class Diamond extends Kite {
     
+    public Diamond(int ID, String name, String colour, String shape, String material, String level, float cost) {
+        super(ID, name, colour, shape, material, level, cost);
+    }
+    
 }

@@ -1,0 +1,17 @@
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('HighlighterDelta', 'Multi', 'Triangular', 'RipStopNylon', 'Beginner', '14.99');
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('RockyMountainDiamond', 'Multi', 'Diamond', 'MylarSheets', 'Beginner', '9.99');
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('ParachuteParafoil', 'Multi', 'Frameless', 'RipStopNylon', 'Intermediate', '22.99');
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('DualLineDelta', 'Green&Black', 'DualLineTriangular', 'Rip Stop Nylon', 'Intermediate', '18.99');
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('RetroDiamond', 'Retro', 'Diamond', 'RipStopNylon', 'Beginner', '11.99');
+
+INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)
+VALUES('WindSurfingParafoil', 'Multi', 'Frameless', 'RipStopNylon', 'Advanced', '27.99');

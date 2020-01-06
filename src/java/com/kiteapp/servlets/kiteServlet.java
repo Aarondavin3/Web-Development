@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author adavi
  */
-public class productManagementServlet extends HttpServlet {
+public class kiteServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,25 +33,25 @@ public class productManagementServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        String action = request.getParameter("action");
-        if(action.equals("List")){
-            listProducts(request,response);
-        }
-    }
-    
-    private void listProducts(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         
+        String action ="action";
+        request.setAttribute("stringKey", action);
+        
+        Kite kite1 = new Kite(1, "Highlighter Delta", "Multi","Triangular","Rip Stop Nylon","Beginner", (float) 14.99);
+        
+        request.getSession().setAttribute("ProductKey", kite1);
+        
         productDAO prodDAO = new productDAO();
-        Vector<Kite> vectorAllKites = prodDAO.getAllProducts();
+        Vector<Kite> allproducts = prodDAO.getAllProducts();
         
-        request.setAttribute(IConstants.REQUEST_KEY_ALL_PRODUCTS,vectorAllKites);
+        request.getSession(true).setAttribute(IConstants.REQUEST_KEY_ALL_PRODUCTS, allproducts);
         
-        RequestDispatcher rd = request.getRequestDispatcher("/productManagement.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/Cart.jsp");
         rd.forward(request, response);
-    }
+        
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -65,9 +65,7 @@ public class productManagementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
-        
-        
+        processRequest(request, response);
     }
 
     /**

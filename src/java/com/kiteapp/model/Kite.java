@@ -17,6 +17,20 @@ package com.kiteapp.model;
     private String material;
     private String level;
     private float cost;
+    
+    public Kite(int ID, String name, String colour, String shape, String material, String level, float cost){
+        this.kiteID = ID;
+        this.name = name;
+        this.colour = colour;
+        this.shape = shape;
+        this.material = material;
+        this.level = level;
+        this.cost = cost;
+    }
+    
+    public Kite(){
+        
+    }
 
     /**
      * @return the name

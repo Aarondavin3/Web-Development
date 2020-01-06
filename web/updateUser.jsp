@@ -112,31 +112,56 @@
                         <c:param name="action" value="update"/>
                     </c:url>
                     
-          
                     
                     
+                    
+                     <p><table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             <c:forEach items="${RKUSER}" var="tempuser">
+                                <tr>
+                                <td scope="row"><c:out value="${tempuser.getId()}"/></td>
+                                <td>${tempuser.firstName}"</td>
+                                <td>${tempuser.lastName}"</td>
+                                <td>${tempuser.email}"</td>
+                                <td><a><a href="<c:url value='/userManagementServlet?action=delete' />" class="btn btn-primary btn-large">DELETE &raquo;</a></a> </td>
+                                </tr>
+                            </c:forEach>
+
+                            </tbody>
+                        </table>   
+                        
+                        
                     <h3>UPDATE USER:</h3>
                     <div class="inputboxes">
                     <form action="${postUrl}" method="POST">
                         <div class="form-group">
+                            <label for="id">ID:</label>
+                            <input type="id" name="ID"class="form-control" value="<c:out value="${tempuser.getId()}"/>" id="id">
+                        </div>
+                        <div class="form-group"
                             <label for="email">Email Address:</label>
                             <input type="email" name="EMAIL" class="form-control" value="${tempuser.email}" id="email">
                         </div>
-                         <div class="form-group">
-                            <label for="pwd">ID:</label>
-                            <input type="id" name="ID"class="form-control" value="${userID}" id="id">
-                        </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
-                            <input type="password" name="PASSWORD"class="form-control" value="<%=request.getParameter("password")%>" id="pwd">
+                            <input type="password" name="PASSWORD"class="form-control" value="${tempuser.password}" id="pwd">
                         </div>
                         <div class="form-group">
                             <label for="fname">First Name:</label>
-                            <input type="fname" name="FNAME" class="form-control" value="" id="fname">
+                            <input type="fname" name="FNAME" class="form-control" value="${tempuser.firstName}" id="fname">
                         </div>
                         <div class="form-group">
                             <label for="lname">Last Name:</label>
-                            <input type="lname" name="LNAME" class="form-control" value="${lName}" id="lname">
+                            <input type="lname" name="LNAME" class="form-control" value="${tempuser.lastName}" id="lname">
                         </div>
                         <div class="form-group">
                             <label for="usertype">User Type:</label>
@@ -146,11 +171,12 @@
                             <label><input type="checkbox"> Remember me</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
+                         
                     </form>
                     
                     </div>
                 </div>
-                        
+                   
              
     </body>
 </html>

@@ -11,6 +11,7 @@ import com.kiteapp.model.kiteUser;
 import com.kiteapp.utils.IConstants;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.Vector;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -116,10 +117,11 @@ public class userManagementServlet extends HttpServlet implements IConstants {
      private void updateInitUsers(HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException {
          
-         kiteUser user = new kiteUser();
+        
          String email = request.getParameter("email");
          userDAO userDAO = new userDAO();
-         userDAO.getUserByEmail(email);
+        
+         Vector<kiteUser> userVect = userDAO.getUsersByEmail(email);
          request.setAttribute(IConstants.REQUEST_KEY_USER,userDAO.getUserByEmail(email));
         
         RequestDispatcher rd = request.getRequestDispatcher("/updateUser.jsp");
@@ -129,27 +131,21 @@ public class userManagementServlet extends HttpServlet implements IConstants {
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         
-        kiteUser updateUser = new kiteUser();
-        String email = request.getParameter("EMAIL");
-        updateUser.setEmail(email);
-        String password = request.getParameter("PASSWORD");
-        updateUser.setPassword(password);
-        String fName = request.getParameter("FNAME");
-        updateUser.setFirstName(fName);
-        String lName = request.getParameter("LNAME");
-        updateUser.setLastName(lName);
-        String userType = request.getParameter("USERTYPE");
-        updateUser.setUserType(userType);
-        
         userDAO userDAO = new userDAO();
-        userDAO.updateUser(updateUser);
-        
+        String email = request.getParameter("email");
+        String fName = request.getParameter("fname");
+        String lName = request.getParameter("lname");
+        try{
+             userDAO.updateUser(fName, lName, email);
+        } catch(SQLException e){
+            System.out.println(e);
+        }
+       
         Vector<kiteUser> allUsersVect = userDAO.getAllUsers();
-        request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS,allUsersVect);
-        
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS, allUsersVect);
         RequestDispatcher rd = request.getRequestDispatcher("/userManagement.jsp");
         rd.forward(request, response);
-        
+                     
     }
     
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
@@ -160,6 +156,8 @@ public class userManagementServlet extends HttpServlet implements IConstants {
         userDAO userDAO = new userDAO();
         userDAO.DeleteUser(user);
         
+        //int quantity = (int)request.getAttribute("");
+        
         Vector<kiteUser> allUsersVect = userDAO.getAllUsers();
         request.setAttribute(IConstants.REQUEST_KEY_ALL_USERS,allUsersVect);
         
@@ -168,13 +166,7 @@ public class userManagementServlet extends HttpServlet implements IConstants {
 
     }
     
-    private void addProductToCart(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        
-        Kite kite = new Kite();
-        String price = request.getParameter("price");
-        userDAO userDAO = new userDAO();
-    }
+   
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

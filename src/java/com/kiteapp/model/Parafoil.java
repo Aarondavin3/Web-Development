@@ -11,4 +11,8 @@ package com.kiteapp.model;
  */
 public class Parafoil extends Kite {
     
+    public Parafoil(int ID, String name, String colour, String shape, String material, String level, float cost) {
+        super(ID, name, colour, shape, material, level, cost);
+    }
+    
 }

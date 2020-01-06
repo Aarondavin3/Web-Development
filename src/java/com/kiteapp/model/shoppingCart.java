@@ -10,37 +10,26 @@ package com.kiteapp.model;
  * @author adavi
  */
 public class shoppingCart {
-   private long cartID;
-   private long kiteID;
+   private Kite kite;
    private int quantity;
-   private float subTotal;
+   
+   public shoppingCart(Kite kite, int quantity){
+       this.kite = kite;
+       this.quantity = quantity;
+   }
 
     /**
-     * @return the cartID
+     * @return the kite
      */
-    public long getCartID() {
-        return cartID;
+    public Kite getKite() {
+        return kite;
     }
 
     /**
-     * @param cartID the cartID to set
+     * @param kite the kite to set
      */
-    public void setCartID(long cartID) {
-        this.cartID = cartID;
-    }
-
-    /**
-     * @return the id
-     */
-    public long getId() {
-        return kiteID;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(long id) {
-        this.kiteID = id;
+    public void setKite(Kite kite) {
+        this.kite = kite;
     }
 
     /**
@@ -56,18 +45,5 @@ public class shoppingCart {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    /**
-     * @return the subTotal
-     */
-    public float getSubTotal() {
-        return subTotal;
-    }
-
-    /**
-     * @param subTotal the subTotal to set
-     */
-    public void setSubTotal(float subTotal) {
-        this.subTotal = subTotal;
-    }
+  
 }
