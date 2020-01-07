@@ -5,45 +5,21 @@
  */
 package com.kiteapp.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author adavi
  */
 public class shoppingCart {
-   private Kite kite;
-   private int quantity;
+   private ArrayList cartItems = new ArrayList();
+   private double dblOrderTotal;
    
-   public shoppingCart(Kite kite, int quantity){
-       this.kite = kite;
-       this.quantity = quantity;
+   public int getLineItemCount(){
+       return cartItems.size();
    }
-
-    /**
-     * @return the kite
-     */
-    public Kite getKite() {
-        return kite;
-    }
-
-    /**
-     * @param kite the kite to set
-     */
-    public void setKite(Kite kite) {
-        this.kite = kite;
-    }
-
-    /**
-     * @return the quantity
-     */
-    public int getQuantity() {
-        return quantity;
-    }
-
-    /**
-     * @param quantity the quantity to set
-     */
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-  
+   
+   public void deleteCartItem(String strItemIndex){
+       
+   }
 }

@@ -7,23 +7,24 @@ package com.kiteapp.servlets;
 
 import com.kiteapp.dao.productDAO;
 import com.kiteapp.model.Kite;
-import com.kiteapp.utils.IConstants;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author adavi
  */
-public class kiteServlet extends HttpServlet {
+public class cartServlet extends HttpServlet {
     
-    public kiteServlet(){
+    public cartServlet(){
         super();
     }
 
@@ -37,12 +38,38 @@ public class kiteServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         
+        String action = request.getParameter("action");
+        if(action == null){
+            displayCart(request, response);
+        }
+        if(action.equals("buy")){
+            buyProduct(request, response);
+        }
+        if(action.equals("remove")){
+            //removeProduct(request, response);
+        }
+    }
+    
+    protected void displayCart(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         
+        RequestDispatcher rd = request.getRequestDispatcher("/Cart.jsp");
+        rd.forward(request, response);
+    }
+    
+    protected void buyProduct(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         
+        productDAO prodDAO = new productDAO();
+        HttpSession session = request.getSession();
+        if(session.getAttribute("cart") == null){
+            List<Kite> cart = new ArrayList<Kite>();
+            //cart.add(new Kite(prodDAO.getProductByID(Integer.par(request.getParameter("id"))),1));
         }
     
+}
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -57,13 +84,6 @@ public class kiteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        productDAO prodDAO = new productDAO();
-        Vector<Kite> vectorAllKites = prodDAO.getAllProducts();
-        request.setAttribute(IConstants.REQUEST_KEY_ALL_PRODUCTS, vectorAllKites);
-        
-        RequestDispatcher rd = request.getRequestDispatcher("/Cart.jsp");
-        rd.forward(request, response);
     }
 
     /**

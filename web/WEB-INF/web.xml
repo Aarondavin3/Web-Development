@@ -21,6 +21,10 @@
         <servlet-name>kiteServlet</servlet-name>
         <servlet-class>com.kiteapp.servlets.kiteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cartServlet</servlet-name>
+        <servlet-class>com.kiteapp.servlets.cartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
@@ -40,6 +44,10 @@
     <servlet-mapping>
         <servlet-name>kiteServlet</servlet-name>
         <url-pattern>/kiteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cartServlet</servlet-name>
+        <url-pattern>/cartServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

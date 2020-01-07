@@ -104,7 +104,7 @@
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-sm-3">
-                              <p href="productManagementServlet?action=addInit" class="btn btn-primary btn-large">ADD PRODUCTS</a></p>
+                                <p><a href="<c:url value='/productManagementServlet?action=addInit' />" class="btn btn-primary btn-large">ADD PRODUCT</a></p>
                             </div>
                               <div class="col-sm-3">
                         <c:url var="postUrl" value="/productManagementServlet">
@@ -139,7 +139,7 @@
                        </div>    
                               
                         <br><br>     
-                        <c:url var="posTUrl" value="/userManagementServlet">
+                        <c:url var="posTUrl" value="/productManagementServlet">
                          <c:param name="action" value="update"/>
                         </c:url>
                         <div class="container-fluid">
@@ -156,11 +156,9 @@
                                     <strong>MATERIAL</strong>
                                 </div>
                                 <div class="col-sm-2" style="color: #70B5C3">
-                                    <strong>LEVEL</strong>
-                                </div>
-                                <div class="col-sm-2" style="color: #70B5C3">
                                     <strong>COST</strong>
                                 </div>
+                                
                             </div>                        
                                                   
                             <c:forEach items="${RKALLPRODUCTS}" var="tempKite">    
@@ -181,18 +179,22 @@
                                         <div class="col-sm-2">
                                             <input type="text" name="material" value="${tempKite.material}" id="material"/>
                                         </div>
+                                        
                                         <div class="col-sm-2">
-                                             <input type="text" name="level" value="${tempKite.level}" id="level"/>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <input type="text" name="cost" value="&euro; ${tempKite.cost}" id="cost"/>
+                                            <input type="text" name="cost" value="${tempKite.cost}" id="cost"/>
                                        </div>
+                                       <div class="col-sm-2">
+                                            <button class="btn btn-sm btn-primary center-block"  type="submit">UPDATE PRODUCT</button>
+                                       </div>  
+                                       
                                     </div>
                                 </div>
+                                       
+                                      
                             </form>   
                             </c:forEach>
 
-                            
+                           
                     </div>
 
                 </div>

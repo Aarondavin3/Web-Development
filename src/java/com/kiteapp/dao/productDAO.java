@@ -64,6 +64,47 @@ public class productDAO {
         return kiteData;
     }
     
+    public  Kite getProductByID(int prodID){
+        DBManager dbmgr = new DBManager();
+        Connection conn = dbmgr.getConnection();
+      
+        String name = null;
+        String colour = null;
+        String shape = null;
+        String material = null;
+        String level = null;
+        float cost = 0;
+        Kite tempUser = new Kite();
+        
+        
+        String query = "SELECT * FROM PRODUCT WHERE PRODUCT_ID=" + prodID  + "";
+        try {
+            PreparedStatement prepstate = conn.prepareStatement(query);
+            ResultSet rs = prepstate.executeQuery();
+            while(rs.next()){
+                name = rs.getString(1);
+                colour = rs.getString(3);
+                shape = rs.getString(4);
+                material = rs.getString(5);
+                level = rs.getString(6);
+                cost = rs.getFloat(7);
+                
+                tempUser.setKiteID(prodID);
+                tempUser.setName(name);
+                tempUser.setColour(colour);
+                tempUser.setShape(shape);
+                tempUser.setMaterial(material);
+                tempUser.setLevel(level);
+                tempUser.setCost(cost);
+                
+            }
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        
+        return tempUser;
+    }
+    
     public void insertKite(Kite newKite){
         String stmtNewKite="INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)\n VALUES('" + newKite.getName() + "', '" + newKite.getColour() + "', '" + newKite.getShape() + "', '" + newKite.getMaterial() + "', '" + newKite.getLevel() + "', " + newKite.getCost() + ")";
         DBManager dbmgr = new DBManager();
@@ -88,6 +129,26 @@ public class productDAO {
             st.executeUpdate();
         } catch(SQLException ex) {
             logger.log(Level.SEVERE,null,ex);
+        }
+    }
+    
+    public  void updateProduct(String pName, String colour, String material, float cost) throws SQLException{
+        String editProduct="UPDATE PRODUCT SET COLOUR = ?, MATERIAL = ?, COST = ? WHERE NAME = ? ";
+        
+        DBManager dbmgr = new DBManager();
+        Connection conn = dbmgr.getConnection();
+        PreparedStatement prepStatement = null;
+        
+        try{
+            prepStatement = conn.prepareStatement(editProduct);
+            prepStatement.setString(1, colour);
+            prepStatement.setString(2, material);
+            prepStatement.setFloat(3, cost);
+            prepStatement.setString(4, pName);
+            
+            prepStatement.executeUpdate();
+        }catch (SQLException sqlex){
+            logger.log(Level.SEVERE,null,sqlex);
         }
     }
     

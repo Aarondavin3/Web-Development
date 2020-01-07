@@ -8,6 +8,7 @@ package com.kiteapp.dao;
 import com.kiteapp.model.kiteUser;
 import com.kiteapp.utils.DBManager;
 import com.kiteapp.utils.IConstants;
+import com.kiteapp.utils.DBSetup;
 import static com.sun.xml.ws.security.impl.policy.Constants.logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -151,6 +152,8 @@ public class userDAO {
         } catch (SQLException sqlExcept) {
             logger.log(Level.SEVERE, null, sqlExcept);
         }
+        DBSetup sdb = new DBSetup();
+        sdb.showData();
     }
        
        public static void updateUser(String fname, String lname, String email) throws SQLException{

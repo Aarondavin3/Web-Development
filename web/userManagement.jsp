@@ -66,7 +66,7 @@
                             <li class="nav-header">User Tasks</li>
                             <li class="active"><a href="userManagementServlet?action=List">User Management</a></li>
                             <li><a href="userManagementServlet?action=addInit">Add users</a></li>
-                            <li><a href="userManagementServlet?action=listUser">Modify details</a></li>
+                            <li><a href="#">Modify details</a></li>
                             <li class="nav-header">Product Tasks</li>
                             <li><a href="productManagementServlet?action=List">View Products</a></li>
                             <li><a href="#">Set up products</a></li>
@@ -205,13 +205,7 @@
             </div>
         </div>
                 
-                <c:url var="getUrl" value="/userManagementServlet">
-                         <c:param name="action" value="updateInit"/>
-                        </c:url>
-                <form action="${getUrl}" method="POST">
-                    <input type="text" name="mail"
-                    <input type="submit">
-                </form>
+               
                         <br><br><br><br><br><br>               
         <footer class="container-fluid text-center">
 	

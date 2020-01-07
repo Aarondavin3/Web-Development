@@ -10,6 +10,7 @@ import com.kiteapp.model.Kite;
 import com.kiteapp.utils.IConstants;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.Vector;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,6 +48,9 @@ public class productManagementServlet extends HttpServlet {
         }
         if(action.equals("delete")){
             deleteProduct(request,response);
+        }
+        if(action.equals("update")){
+            updateProduct(request,response);
         }
     }
     
@@ -110,6 +114,30 @@ public class productManagementServlet extends HttpServlet {
         
         RequestDispatcher rd = request.getRequestDispatcher("/productManagement.jsp");
         rd.forward(request, response);
+    }
+    
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        
+        productDAO prodDAO = new productDAO();
+        String pName = request.getParameter("pName");
+        String colour = request.getParameter("colour");
+        String material = request.getParameter("material");
+        float cost = Float.parseFloat(request.getParameter("cost"));
+        
+        try{
+           prodDAO.updateProduct(pName,colour,material,cost);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        
+        Vector<Kite> allKitesVect = prodDAO.getAllProducts();
+        request.setAttribute(IConstants.REQUEST_KEY_ALL_PRODUCTS,allKitesVect);
+        RequestDispatcher rd = request.getRequestDispatcher("/productManagement.jsp");
+        rd.forward(request, response);
+        
+        
+      
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
