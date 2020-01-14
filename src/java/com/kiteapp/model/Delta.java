@@ -11,6 +11,40 @@ package com.kiteapp.model;
  */
 public class Delta extends Kite {
     
+
+
+
+
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String category;
+    
+    
+    public Delta (String id, String firstName, String lastName, String category) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+    
+    public String getId() {
+        return id;
+    }
+    
+    public String getFirstName() {
+        return firstName;
+    }
+    
+    public String getLastName() {
+        return lastName;
+    }
+
+    
     public Delta(int ID, String name, String colour, String shape, String material, String level, float cost) {
         super(ID, name, colour, shape, material, level, cost);
     }

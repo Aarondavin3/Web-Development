@@ -25,6 +25,18 @@
         <servlet-name>cartServlet</servlet-name>
         <servlet-class>com.kiteapp.servlets.cartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>autoCompleteServlet</servlet-name>
+        <servlet-class>com.kiteapp.servlets.autoCompleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchResultServlet</servlet-name>
+        <servlet-class>com.kiteapp.servlets.searchResultServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>productServlet</servlet-name>
+        <servlet-class>com.kiteapp.servlets.productServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
@@ -48,6 +60,18 @@
     <servlet-mapping>
         <servlet-name>cartServlet</servlet-name>
         <url-pattern>/cartServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>autoCompleteServlet</servlet-name>
+        <url-pattern>/autoCompleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchResultServlet</servlet-name>
+        <url-pattern>/searchResultServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productServlet</servlet-name>
+        <url-pattern>/productServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

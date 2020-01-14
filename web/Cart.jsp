@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="com.kiteapp.model.kiteUser"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 	<head>
 	    <title>Kites Boutique </title>
@@ -86,26 +87,40 @@
                                     <th scope="col">Product</th>
                                     <th scope="col">Available</th>
                                     <th scope="col" class="text-center">Quantity</th>
-                                    <th scope="col" class="text-right">Price ?</th>
+                                    <th scope="col" class="text-right">Price &euro;</th>
                                     <th> </th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <c:forEach var="item" items="${sessionScope.cart}">
+                                    <c:set var="total" value="${total + item.kite.cost * item.quantity}"></c:set>
+                                    
                                 <tr>
-                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                    <td></td>
+                               
+                                
+                                
+                                    <td><img src="img/<c:out value="${tempproduct.getKiteID()}"/>.jpg" class="img-responsive" style="width:100%" alt="Delta Kite"> </td>
+                                    <td>${item.kite.name}</td>
                                     <td>In Stock</td>
-                                    <td><input class="form-control" type="text" value="1" /></td>
-                                    <td class="text-right"></td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                    <td>
+                                        <form action="${postUrl}" method="POST">
+                                         <input type="hidden" name="id" value="${item.kite.kiteID}">
+                                         <input class="form-control" name="QUANTITY" type="text" value="${item.quantity}" id="quantity" />
+                                         <input type="submit" value="Update">
+                                        </form>
+                                    </td>
+                                    <td class="text-right">${item.kite.cost}</td>
+                                    <td class="text-right"><a href="${pageContext.request.contextPath }/cartServlet?action=remove&kiteID=${item.kite.kiteID}"><span class="glyphicon glyphicon-trash"></span></a> </td>
                                 </tr>
                                 
+                                </c:forEach>
+                                <tr>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td>Sub-Total</td>
-                                    <td class="text-right"></td>
+                                    <td class="text-right">&euro;&nbsp;${total}</td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -113,7 +128,7 @@
                                     <td></td>
                                     <td></td>
                                     <td>Shipping</td>
-                                    <td class="text-right"></td>
+                                    <td class="text-right">0.00</td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -121,7 +136,7 @@
                                     <td></td>
                                     <td></td>
                                     <td><strong>Total</strong></td>
-                                    <td class="text-right"><strong></strong></td>
+                                    <td class="text-right"><strong></strong>&euro;&nbsp;${total}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -130,7 +145,7 @@
                 <div class="col mb-2">
                     <div class="row">
                         <div class="col-sm-12  col-md-6">
-                            <button class="btn btn-block btn-light">Continue Shopping</button>
+                             <a href="productServlet" class="btn btn-primary btn-lg">CONTINUE SHOPPING</a>
                         </div>
                         <div class="col-sm-12 col-md-6 text-right">
                           <a href="/KiteWebApplication/Checkout.jsp" class="btn btn-primary btn-lg">CHECKOUT</a>
@@ -139,5 +154,23 @@
                 </div>
             </div>
         </div>
+                                
+                                <br><br><br><br>
+	<footer class="container-fluid text-center">
+	
+	  <h4> KITES BOUTIQUE</h4>
+	   <ul class="list-unstyled list-inline text-center">
+		   <i class="fa fa-envelope" id="emailIcon" onclick="emailClick()"></i>
+		   <i class="fa fa-facebook-square" id="facebook" onclick="iconClick()"></i>
+		   <i class="fa fa-pinterest" id="pinterest" onclick="pinterestClick()"></i>
+		   <i class="fa fa-instagram" id="insta" onclick="instaClick()"></i>
+           </ul>
+   
+           <!--Google map-->
+	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">
+	  <iframe src="https://maps.google.com/maps?q=midelton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+		style="border:0" allowfullscreen></iframe>
+	</div>
+	</footer>
     </body>
 </html>

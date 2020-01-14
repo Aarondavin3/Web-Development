@@ -1,5 +1,7 @@
 <%@page import="com.kiteapp.model.kiteUser"%>
 <html lang="en">
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 	<head>
 	    <title> SHOP</title>
 		<!--- required meta tags --->
@@ -19,7 +21,7 @@
                 <script type = "text/javascript" src ="js/iconClick.js"></script>
 		
 	</head>
-	<body>
+	<body onload="init()">
 	<div class="header">
             <h1>KITES BOUTIQUE</h1>
         </div>
@@ -51,6 +53,9 @@
                            </ul>
                         
 			 <ul class="nav navbar-nav navbar-right">
+                             <li>
+                                 <form name="autofillform" action="autocomplete"
+                             </li>
                             <li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
                                    data-content=<%if(session.getAttribute("SKUSER") != null){
                                        kiteUser user = (kiteUser)session.getAttribute("SKUSER");
@@ -146,7 +151,7 @@
 	  <div class="col-sm-4">
 	   <div class="panel panel-primary">
 	    <div class="panel-heading"> HIGLIGHTER DELTA</div>
-		  <div class="panel-body"><img src="img/Delta_Kite.jpg"  class="img-responsive" style="width:100%" alt="Delta Kite">
+		  <div class="panel-body"><img src="img/1.jpg.jpg"  class="img-responsive" style="width:100%" alt="Delta Kite">
 			&nbsp;
 		    <ul>
 				<li><span style="font-weight:bold"> MATERIAL:</span> RIP STOP NYLON</li>
@@ -174,7 +179,7 @@
 	<div class ="col-sm-4">
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">ROCKY MOUNTAIN DIAMOND</div>
-	   <div class="panel-body"><img src="img/diamond-kite.jpg" class="img-responsive" style="width:100%" alt="DIAMOND Kite">
+	   <div class="panel-body"><img src="img/2.jpg" class="img-responsive" style="width:100%" alt="DIAMOND Kite">
 	    &nbsp;
 		 <ul>
 			<li><span style="font-weight:bold"> MATERIAL:</span> MYLAR SHEETS</li>
@@ -200,7 +205,7 @@
 	<div class="col-sm-4">
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">PARACHUTE PARAFOIL</div>
-	   <div class="panel-body"><img src="img/parachute.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite">
+	   <div class="panel-body"><img src="img/3.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite">
 	   &nbsp;
 		 <ul>
 			<li><span style="font-weight:bold"> MATERIAL:</span> RIP STOP NYLON</li>
@@ -230,7 +235,7 @@
 	  <div class="col-sm-4">
 	   <div class="panel panel-primary">
 	    <div class="panel-heading"> DUAL LINE DELTA</div>
-		  <div class="panel-body"><img src="img/Delta-2.jpg"  class="img-responsive" style="width:100%" alt="Delta Kite">
+		  <div class="panel-body"><img src="img/4.jpg"  class="img-responsive" style="width:100%" alt="Delta Kite">
 			&nbsp;
 		    <ul>
 				<li><span style="font-weight:bold"> MATERIAL:</span> RIP STOP NYLON</li>
@@ -258,7 +263,7 @@
 	<div class ="col-sm-4">
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">RETRO DIAMOND</div>
-	   <div class="panel-body"><img src="img/Retro-Diamond.jpg" class="img-responsive" style="width:100%" alt="DIAMOND Kite">
+	   <div class="panel-body"><img src="img/5.jpg" class="img-responsive" style="width:100%" alt="DIAMOND Kite">
 	    &nbsp;
 		 <ul>
 			<li><span style="font-weight:bold"> MATERIAL:</span> RIP STOP NYLON</li>
@@ -284,7 +289,7 @@
 	<div class="col-sm-4">
 	 <div class="panel panel-primary">
 	  <div class="panel-heading"> WIND SURFING PARAFOIL</div>
-	   <div class="panel-body"><img src="img/Parafoil.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite">
+	   <div class="panel-body"><img src="img/6.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite">
 	   &nbsp;
 		 <ul>
 			<li><span style="font-weight:bold"> MATERIAL:</span> RIP STOP NYLON</li>

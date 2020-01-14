@@ -5,11 +5,13 @@
  */
 package com.kiteapp.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author adavi
  */
-  public class Kite {
+  public class Kite implements Serializable {
     private String name;
     private int kiteID;
     private String colour;
@@ -29,6 +31,13 @@ package com.kiteapp.model;
     }
     
     public Kite(){
+        kiteID = 0;
+        name = "";
+        colour ="";
+        shape = "";
+        material = "";
+        level = "";
+        cost = 0;
         
     }
 

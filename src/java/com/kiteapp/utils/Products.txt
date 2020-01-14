@@ -1,0 +1,6 @@
+1,HighlighterDelta,Multi,Triangular,RipStopNylon,Beginner,14.99
+2,RockyMountainDiamond,Multi,Diamond,MylarSheets,Beginner,9.99
+3,ParachuteParafoil,Multi,Frameless,RipStopNylon,Intermediate,22.99
+4,DualLineDelta,Green&Black,DualLineTriangular,RipStopNylon,Intermediate,18.99
+5,RetroDiamond,Retro,Diamond,RipStopNylon,Beginner,11.99
+6,WindSurfingParafoil,Multi,Frameless,RipStopNylon,Advanced,27.99

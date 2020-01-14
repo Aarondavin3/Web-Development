@@ -1,7 +1,20 @@
+<%@page pageEncoding="UTF-8" %>
 <%@page import="com.kiteapp.model.kiteUser"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
+    <c:set var="loc" value="en_US"/>
+    <c:if test="${!(empty param.locale)}">
+        <c:set var="loc" value="${param.locale}"/>
+    </c:if>
+    <fmt:setLocale value="${loc}" />
+    <fmt:bundle basename="com.kiteapp.utils/app">
+        
+   
 	<head>
-	    <title>Kites Boutique </title>
+            <title><fmt:message key="newTitle"/></title>
 		<!--- required meta tags --->
 		<meta charset="utf-8">	
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +30,13 @@
 		<!--External Stylesheet-->
 		<link rel="stylesheet" type="text/css" href="css/bootstrapHomepage.css"/>
                 <script type = "text/javascript" src ="js/iconClick.js"></script>
+                <script type="text/javascript" src="js/ajaxSearch.js"></script>
 		
 		
 	</head>
 	<body>
             <div class="header">
-             <h1>KITES BOUTIQUE</h1>
+             <h1><fmt:message key="newTitle"/></h1>
 	    </div>			 
             <nav class="navbar navbar-inverse">
               <div class="container-fluid">
@@ -35,10 +49,10 @@
                </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
-                          <li class="active"><a href="#">OUR ROOTS</a></li>
-                          <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
-                          <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
-                          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
+                          <li class="active"><a href="#"><fmt:message key="ourRoots"/></a></li>
+                          <li><a href="/KiteWebApplication/ourKites.jsp"><fmt:message key="ourKites"/></a></li>
+                          <li><a href="productServlet"><fmt:message key="shop"/></a></li>
+                          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><fmt:message key="follow"/></a>
                               <ul class="dropdown-menu">
                                   <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>
                                   <li><a href="#">FACEBOOK</a></li>
@@ -47,11 +61,45 @@
                           </li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
+                         
                           <li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
                                  data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
                               <span class="glyphicon glyphicon-user"></span></a></li> 
-                          <li><a href="/KiteWebApplication/Cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                          <li><a href="${pageContext.request.contextPath }/cartServlet"<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                          <li><a href="#" data-toggle="modal" data-target="#exampleModal" <span class="glyphicon glyphicon-globe"></span></a></li>
+                          <c:url value="Homepage.jsp" var="engURL">
+                            <c:param name="locale" value="en_US"/>
+                          </c:url>    
+                         
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Please Select Language</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <a href="${engURL}">
+                                          <img src="https://media.giphy.com/media/Mh9fsz5AolnDq/giphy.gif"/>
+                                      </a>
+                                      <c:url value="Homepage.jsp" var="frenchURL">
+                                        <c:param name="locale" value="fr_FR"/>
+                                      </c:url>    
+                                      <a href="${frenchURL}">
+                                          <img src="https://media.giphy.com/media/ErPDvrEYZYNOM/giphy.gif"/>
+                                      </a>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                       </ul>
                   </div>
               </div>
@@ -149,4 +197,5 @@
 	</footer>
 	
     </body>
+     </fmt:bundle>
 	</html>

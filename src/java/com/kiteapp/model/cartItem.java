@@ -5,11 +5,14 @@
  */
 package com.kiteapp.model;
 
+import java.io.Serializable;
+import java.util.Vector;
+
 /**
  *
  * @author adavi
  */
-public class cartItem {
+public class cartItem implements Serializable {
     private int quantity;
     private Kite kite;
 
@@ -21,6 +24,8 @@ public class cartItem {
         this.kite = kite;
         this.quantity = quantity;
     }
+
+    
    
     /**
      * @return the quantity
@@ -49,5 +54,10 @@ public class cartItem {
      */
     public void setKite(Kite kite) {
         this.kite = kite;
+    }
+    
+    public float getTotal(){
+        float total = kite.getCost() * quantity;
+        return total;
     }
 }
