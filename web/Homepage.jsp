@@ -119,7 +119,7 @@
               <div class="panel panel-primary">
 	       <div class="panel-heading">DELTA</div>
                 <div class="panel-body"><img src="img/Delta-1.jpg" class="img-responsive" style="width:100%" alt="Delta Kite"></div>
-		 <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
+		 <div class="panel-footer panel-custom"><a href="productServlet">SHOP COLLECTION</a></div>
 	      </div>
 	</div>
 	
@@ -127,7 +127,7 @@
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">PARAFOIL</div>
 	   <div class="panel-body"><img src="img/Parafoil-11.jpg" class="img-responsive" style="width:100%" alt="Parafoil 	Kite"></div>
-	    <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
+	    <div class="panel-footer panel-custom"><a href="productServlet">SHOP COLLECTION</a></div>
 	</div>
 	</div>
 	
@@ -135,7 +135,7 @@
 	 <div class="panel panel-primary">
 	  <div class="panel-heading">DIAMOND</div>
 	   <div class="panel-body"><img src="img/Diamond.jpg" class="img-responsive" style="width:100%" alt="Diamond Kite"></div>
-	    <div class="panel-footer panel-custom"><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP COLLECTION</a></div>
+	    <div class="panel-footer panel-custom"><a href="productServlet">SHOP COLLECTION</a></div>
 	</div>
 	</div>
 	</div>
@@ -172,7 +172,7 @@
 	   <br>
 	    <div class="card-body">SHOP NOW<br> & GET 10% OFF
 		<br>
-		<a href="/KiteWebApplication/ProductBrowse.jsp" class="btn btn-primary btn-lg">SHOP</a>
+		<a href="productServlet" class="btn btn-primary btn-lg">SHOP</a>
 		</div>
 	   </div>
 	  </div>

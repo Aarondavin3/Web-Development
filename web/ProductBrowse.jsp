@@ -164,14 +164,10 @@
 		   
 		   <div class="panel-footer panel-custom">
 				<p>&euro;14.99</p>
-                                <%if(session.getAttribute("SKUSER") != null){
-                                        
-                                    %>
-                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
-                                    <%}else{%>
+                               
                                    
                                     <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
-                                     <%}%>
+                                     
 		   </div>  
 		</div>
 	</div>
@@ -190,14 +186,12 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;9.99</p>
-			<%if(session.getAttribute("SKUSER") != null){
-                                        
-                                    %>
-                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
-                                    <%}else{%>
+			
+                                    
+                                   
                                    
                                     <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
-                                     <%}%>
+                                     
 		</div>
 	</div>
 	</div>
@@ -216,14 +210,14 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;22.99</p>
-			<%if(session.getAttribute("SKUSER") != null){
+			
                                         
-                                    %>
-                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
-                                    <%}else{%>
+                                
+                                   
+                                   
                                    
                                     <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
-                                     <%}%>
+                                    
 		</div>
 	</div>
 	</div>
@@ -248,14 +242,12 @@
 		   
 		   <div class="panel-footer panel-custom">
 				<p> &euro;18.99</p>
-				<%if(session.getAttribute("SKUSER") != null){
-                                        
-                                    %>
-                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
-                                    <%}else{%>
+				
+                                   
+                                   
                                    
                                     <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
-                                     <%}%>
+                                    
 		   </div>  
 		</div>
 	</div>
@@ -274,14 +266,14 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;11.99</p>
-			<%if(session.getAttribute("SKUSER") != null){
+			
                                         
-                                    %>
-                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
-                                    <%}else{%>
+                                    
+                                    
+                                   
                                    
                                     <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
-                                     <%}%>
+                                    
 		</div>
 	</div>
 	</div>
@@ -300,14 +292,10 @@
 	   </div>
 	    <div class="panel-footer panel-custom">
 			<p> &euro;27.99</p>
-			<%if(session.getAttribute("SKUSER") != null){
-                                        
-                                    %>
-                                    <a href="/KiteWebApplication/Product.jsp" class="btn btn-primary btn-lg">BUY NOW</a>
-                                    <%}else{%>
+			
                                    
                                     <a href="/KiteWebApplication/index.html" class="btn btn-primary btn-lg">BUY NOW</a>
-                                     <%}%>
+                                    
 		</div>
 	</div>
 	</div>

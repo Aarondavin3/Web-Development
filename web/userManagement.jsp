@@ -37,9 +37,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="/adminHomepage.jsp">OUR ROOTS</a></li>
-                        <li><a href="/Product.jsp">OUR KITES</a></li>
-                        <li class="active"><a href="/KiteWebApplication/userManagement.jsp">USER MANAGEMENT</a></li>
+                        <li><a href="#">OUR ROOTS</a></li>
+                        <li><a href="#">OUR KITES</a></li>
+                        <li class="active"><a href="userManagementServlet?action=List">USER MANAGEMENT</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
@@ -69,7 +69,7 @@
                             <li><a href="#">Modify details</a></li>
                             <li class="nav-header">Product Tasks</li>
                             <li><a href="productManagementServlet?action=List">View Products</a></li>
-                            <li><a href="#">Set up products</a></li>
+                            <li><a href="productManagementServlet?action=addInit">Set up products</a></li>
                             <li><a href="#">Allocate delivery</a></li>
                         </ul>
                     </div>

@@ -93,7 +93,7 @@ public class productDAO {
                 cost = rs.getFloat(7);
                 
                 
-               // kiteData.add(tempUser);
+               kiteData.add(tempUser);
                 
             }
         } catch (SQLException ex){
@@ -110,6 +110,51 @@ public class productDAO {
         return tempUser;
     }
     
+    
+     public Vector<Kite> getProductByIDVect(String prodID){
+        DBManager dbmgr = new DBManager();
+        Connection conn = dbmgr.getConnection();
+        int productID = 0;
+        String name = null;
+        String colour = null;
+        String shape = null;
+        String material = null;
+        String level = null;
+        float cost = 0;
+        Vector<Kite> kiteData = new Vector();
+        Kite tempUser = new Kite();
+        
+        
+        String query = "SELECT * FROM PRODUCT WHERE PRODUCT_ID=" + prodID  + "";
+        try {
+            PreparedStatement prepstate = conn.prepareStatement(query);
+            ResultSet rs = prepstate.executeQuery();
+            while(rs.next()){
+                productID = rs.getInt(1);
+                name = rs.getString(2);
+                colour = rs.getString(3);
+                shape = rs.getString(4);
+                material = rs.getString(5);
+                level = rs.getString(6);
+                cost = rs.getFloat(7);
+                
+                
+               kiteData.add(tempUser);
+                
+            }
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+                tempUser.setKiteID(productID);
+                tempUser.setName(name);
+                tempUser.setColour(colour);
+                tempUser.setShape(shape);
+                tempUser.setMaterial(material);
+                tempUser.setLevel(level);
+                tempUser.setCost(cost);
+        
+        return kiteData;
+    }
     public void insertKite(Kite newKite){
         String stmtNewKite="INSERT INTO PRODUCT(NAME,COLOUR,SHAPE,MATERIAL,LEVEL,COST)\n VALUES('" + newKite.getName() + "', '" + newKite.getColour() + "', '" + newKite.getShape() + "', '" + newKite.getMaterial() + "', '" + newKite.getLevel() + "', " + newKite.getCost() + ")";
         DBManager dbmgr = new DBManager();

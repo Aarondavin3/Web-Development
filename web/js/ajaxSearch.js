@@ -42,7 +42,7 @@ function callback() {
     }
 }
 
-function appendComposer(firstName,lastName,composerId) {
+function appendComposer(name,ID) {
 
     var row;
     var cell;
@@ -64,8 +64,8 @@ function appendComposer(firstName,lastName,composerId) {
 
     linkElement = document.createElement("a");
     linkElement.className = "popupItem";
-    linkElement.setAttribute("href", "autocomplete?action=lookup&id=" + composerId);
-    linkElement.appendChild(document.createTextNode(firstName + " " + lastName));
+    linkElement.setAttribute("href", "searchResultServlet?action=lookup&id=" + ID);
+    linkElement.appendChild(document.createTextNode(name));
     cell.appendChild(linkElement);
 }
 
@@ -100,20 +100,18 @@ function parseMessages(responseXML) {
         return false;
     } else {
 
-        var composers = responseXML.getElementsByTagName("composers")[0];
+        var products = responseXML.getElementsByTagName("kites")[0];
 
-        if (composers.childNodes.length > 0) {
+        if (products.childNodes.length > 0) {
             completeTable.setAttribute("bordercolor", "black");
             completeTable.setAttribute("border", "1");
     
-            for (loop = 0; loop < composers.childNodes.length; loop++) {
-                var composer = composers.childNodes[loop];
-                var firstName = composer.getElementsByTagName("firstName")[0];
-                var lastName = composer.getElementsByTagName("lastName")[0];
-                var composerId = composer.getElementsByTagName("id")[0];
-                appendComposer(firstName.childNodes[0].nodeValue,
-                    lastName.childNodes[0].nodeValue,
-                    composerId.childNodes[0].nodeValue);
+            for (loop = 0; loop < products.childNodes.length; loop++) {
+                var product = products.childNodes[loop];
+                var Name = products.getElementsByTagName("Name")[0];
+                var ID = products.getElementsByTagName("id")[0];
+                appendComposer(Name.childNodes[0].nodeValue,ID.childNodes[0].nodeValue
+                    );
             }
         }
     }

@@ -87,7 +87,7 @@
  Dignissim suspendisse in est ante in. Quam vulputate dignissim suspendisse in est ante in nibh.
 	</p>
 	<br>
-	<a href="/KiteWebApplication/ProductBrowse.jsp" class="btn btn-primary btn-lg">VISIT OUR SHOP</a>
+	<a href="productServlet" class="btn btn-primary btn-lg">VISIT OUR SHOP</a>
 	</div>
 	</div>
 	<br><br>

@@ -1,4 +1,4 @@
-    <%@page import="com.kiteapp.model.kiteUser"%>
+<%@page import="com.kiteapp.model.kiteUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
@@ -20,6 +20,7 @@
 		<link rel="stylesheet" type="text/css" href="css/ProductBrowse.css"/>
 		<script type = "text/javascript" src ="js/Increment.js"></script>
                 <script type = "text/javascript" src ="js/iconClick.js"></script>
+                <script type = "text/javascript" src ="js/ajaxSearch.js"></script>
 		
 	</head>
 	<body onload="init();">
@@ -50,6 +51,10 @@
                           </li>
 			 </ul>
 			 <ul class="nav navbar-nav navbar-right">
+                             <li><form name="autofillform" action="searchResultServlet" method="GET"><input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" size="40" name="search" id="complete-field" onkeyup="doCompletion()"></form>
+            <div class="dropdown-content" style="" id="complete-table">
+                        <table  class="popupBox" > </table>
+                      </div></li>
     			<li><a href="/KiteWebApplication/index.html" data-toggle="popover" title="WELCOME BACK"  
                                data-content=<% kiteUser user = (kiteUser)session.getAttribute("SKUSER"); %>
                               User:<%= user.getFirstName() %> data-placement="bottom" data-trigger="hover">
@@ -140,14 +145,14 @@
 	<footer class="container-fluid text-center">
 	
 	  <h4> KITES BOUTIQUE</h4>
+	   
 	   <ul class="list-unstyled list-inline text-center">
 		   <i class="fa fa-envelope" id="emailIcon" onclick="emailClick()"></i>
 		   <i class="fa fa-facebook-square" id="facebook" onclick="iconClick()"></i>
 		   <i class="fa fa-pinterest" id="pinterest" onclick="pinterestClick()"></i>
 		   <i class="fa fa-instagram" id="insta" onclick="instaClick()"></i>
            </ul>
-   
-           <!--Google map-->
+        <!--Google map-->
 	<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 350px">
 	  <iframe src="https://maps.google.com/maps?q=midelton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
 		style="border:0" allowfullscreen></iframe>

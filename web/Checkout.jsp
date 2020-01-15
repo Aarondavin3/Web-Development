@@ -37,7 +37,7 @@
                       <ul class="nav navbar-nav">
                           <li class="active"><a href="#">OUR ROOTS</a></li>
                           <li><a href="/KiteWebApplication/ourKites.jsp">OUR KITES</a></li>
-                          <li><a href="/KiteWebApplication/ProductBrowse.jsp">SHOP</a></li>
+                          <li><a href="productServlet">SHOP</a></li>
                           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FOLLOW</a>
                               <ul class="dropdown-menu">
                                   <li><a href="https://www.instagram.com/explore/tags/kite/?hl=en">INSTAGRAM</a></li>

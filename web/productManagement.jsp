@@ -65,8 +65,8 @@
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <ul class="nav nav-list">
                             <li class="nav-header">User Tasks</li>
-                            <li class="active"><a href="/KiteWebApplication/UserManagement.jsp">User Management</a></li>
-                            <li><a href="#">Add users</a></li>
+                            <li class="active"><a href="userManagementServlet?action=List">User Management</a></li>
+                            <li><a href="userManagementServlet?action=addInit">Add users</a></li>
                             <li><a href="#">Modify details</a></li>
                             <li class="nav-header">Product Tasks</li>
                             <li><a href="productManagementServlet?action=List">View Products</a></li>
